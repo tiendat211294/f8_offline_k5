@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 1</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      i {
+        font-size: 33px;
+      }
+      .contact-info {
+        color: gray;
+        display: flex;
+        flex-direction: column;
+      }
+
+      div {
+        padding-top: 10px;
+      }
+      input {
+        height: 30px;
+      }
+      button {
+        width: 110px;
+        height: 30px;
+        color: white;
+        background-color: rgb(4, 229, 249);
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <table cellspacing="20">
+      <thead>
+        <tr>
+          <td colspan="2"><h1>CONTACT US</h1></td>
+        </tr>
+        <tr>
+          <td><h2>Contact info</h2></td>
+          <td><h2>Having Any Query! Or Book an appointment</h2></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="contact-info">
+            <p>
+              <i class="fas fa-map-marker-alt"></i>321 Awesome Street New York,
+              NY 17022
+            </p>
+            <p><i class="far fa-envelope"></i> info@companyname.com</p>
+            <p><i class="fas fa-phone-alt"></i> +1 800 123 1234</p>
+          </td>
+          <td>
+            <form action="">
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  size="50"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  size="50"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  size="50"
+                />
+              </div>
+              <div>
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="50"
+                  rows="8"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+              <button>Send Message</button>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
