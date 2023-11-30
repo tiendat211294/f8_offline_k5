@@ -1,0 +1,43 @@
+h3 {
+  font-family: "Alfa Slab One", serif;
+  color: rgb(58, 14, 14);
+  text-align: center;
+  margin-top: 10px;
+  font-size: 70px;
+}
+h2 {
+  font-family: "Bebas Neue";
+  color: rgb(58, 14, 14);
+  text-align: center;
+  font-size: 40px;
+}
+div[class^="row"] {
+  display: flex;
+  justify-content: center;
+}
+input {
+  margin: 20px;
+  padding: 15px;
+  width: 300px;
+  font-family: "Bebas Neue";
+}
+input::placeholder {
+  font-size: 20px;
+  padding: auto;
+  color: rgb(58, 14, 14);
+}
+button:hover {
+  color: rgb(247, 135, 8);
+}
+button:active {
+  background-color: rgb(172, 112, 112);
+}
+button {
+  margin: 20px;
+  border: none;
+  font-family: "Alfa Slab One", serif;
+  width: 333px;
+  border-radius: 5px;
+  background-color: rgb(165, 42, 42);
+  color: white;
+}

@@ -1,0 +1,39 @@
+form {
+  color: aliceblue;
+  border: rgb(54, 79, 101) solid;
+  border-radius: 5px;
+  background-color: rgb(54, 79, 101);
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+span {
+  color: orange;
+}
+input {
+  padding-left: 10px;
+  height: 30px;
+  width: 300px;
+  border-radius: 3px;
+  border: none;
+}
+button {
+  height: 32px;
+  width: 200px;
+  border-radius: 3px;
+  border: none;
+  color: black;
+  background-color: rgb(228, 190, 37);
+}
+table:hover input {
+  color: orange;
+  background-color: #ddd;
+}
+table:hover input::placeholder {
+  color: orange;
+}
+table:hover button {
+  color: #fff;
+  background-color: orange;
+}

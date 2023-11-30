@@ -1,0 +1,65 @@
+section {
+  text-align: center;
+}
+h1 {
+  font-size: 50px;
+}
+.list {
+  justify-content: center;
+  display: flex;
+  padding: 30px;
+}
+.prd-kind button {
+  width: auto;
+  padding: 10px 20px;
+  border: none;
+}
+.prd-kind button:hover,
+.prd-kind button:focus {
+  color: white;
+  background-color: rgb(0, 0, 123);
+}
+img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+.prd {
+  display: flexbox;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.prd-action {
+  position: relative;
+}
+.prd-action > a:last-of-type {
+  display: none;
+}
+.prd-action:hover a:first-of-type {
+  display: none;
+}
+.prd-action:hover a:last-of-type {
+  display: inline;
+}
+.action {
+  display: none;
+  position: absolute;
+  top: 160px;
+}
+.prd-action:hover .action {
+  display: block;
+}
+div.row i {
+  position: sticky;
+  padding: 23px;
+  background-color: rgb(0, 0, 123);
+  color: white;
+}
+.btn {
+  padding: 20px 65px;
+  border: none;
+  background-color: rgb(0, 0, 123);
+  color: white;
+  margin-top: 10px;
+}
