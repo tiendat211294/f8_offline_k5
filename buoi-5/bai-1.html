@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 1</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/bai-1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <form>
+      <h1>Hey there</h1>
+      <p>
+        <span class="request">We'd like to hear from you.</span> Send us your
+        message or just hi with our contact form or directly via phone, we love
+        to chat.
+      </p>
+      <div class="input-icon">
+        <input type="text" name="name" placeholder="Your name" class="name" />
+        <i id="1" class="fa-solid fa-user"></i
+        ><i id="2" class="fa-solid fa-star"></i>
+        <i id="3" class="fa-solid fa-xmark"></i>
+        <p class="need">Enter your name</p>
+      </div>
+      <div class="input-icon">
+        <input
+          type="email"
+          name="email"
+          placeholder="your@domain.com"
+          class="email"
+        />
+        <p class="need">Enter your email</p>
+        <i id="1" class="fa-solid fa-envelope"></i
+        ><i id="2" class="fa-solid fa-star"></i>
+        <i id="3" class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="input-icon">
+        <input type="tel" name="phone" placeholder="+44 00 123" class="phone" />
+        <p class="need">Enter your phone number</p>
+        <i id="1" class="fa-solid fa-mobile-screen-button"></i>
+      </div>
+      <div class="input-icon">
+        <select name="subject" id="subject">
+          <option value="1" selected>Subject</option>
+          <option value="2">math</option>
+          <option value="3">math</option>
+          <option value="4">math</option></select
+        ><i id="1" class="fa-solid fa-book"></i>
+        <p class="need">Choose your subject</p>
+      </div>
+      <div class="input-icon">
+        <textarea
+          name="message"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Message"
+        ></textarea
+        ><i id="1" class="fa-solid fa-message"></i>
+        <i id="2" class="fa-solid fa-star"></i>
+        <i id="3" class="fa-solid fa-xmark"></i>
+        <p class="need">Leave your message</p>
+      </div>
+      <div class="btn">
+        <label><input type="checkbox" />Send me a copy of this message</label>
+        <button>SEND</button>
+      </div>
+    </form>
+  </body>
+</html>

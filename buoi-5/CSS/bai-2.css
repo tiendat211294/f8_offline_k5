@@ -1,0 +1,29 @@
+label {
+  display: inline-block;
+  width: 80%;
+  color: white;
+  background-color: rgb(174, 75, 0);
+  padding: 10px 10px 10px 40px;
+}
+.text-quest {
+  padding: 10px 10px 10px 10px;
+}
+i {
+  position: absolute;
+  left: 20px;
+}
+.solution {
+  display: none;
+  line-height: 1;
+  width: 80%;
+  margin-left: 10px;
+}
+input {
+  display: none;
+}
+input:checked ~ .solution {
+  display: inline-block;
+}
+input:checked + label > .fa-plus {
+  display: none;
+}

@@ -1,0 +1,146 @@
+body {
+  font-family: "Lato", sans-serif;
+  color: gray;
+  margin: 30px;
+}
+h1 {
+  font-family: "Lobster", sans-serif;
+  color: black;
+}
+div {
+  padding-top: 30px;
+}
+.request {
+  color: rgb(233, 62, 50);
+}
+input:not(input[type="checkbox"]) {
+  padding-left: 40px;
+  width: 300px;
+  height: 31px;
+  border: solid;
+  border-width: 2px;
+  border-color: gray;
+}
+.need {
+  position: absolute;
+  top: -40px;
+  left: 50px;
+  color: white;
+  border: solid black;
+  background-color: black;
+  padding: 10px 10px 10px 10px;
+  display: none;
+}
+button {
+  border: none;
+  margin-left: 26px;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  background-color: rgb(233, 62, 50);
+}
+textarea {
+  font-family: "Lato", sans-serif;
+  padding-left: 40px;
+  width: 300px;
+  height: 200px;
+  border: solid;
+  border-width: 2px;
+  border-color: gray;
+}
+select {
+  font-family: "Lato", sans-serif;
+  padding-left: 40px;
+  width: 345px;
+  height: 37px;
+  border: solid;
+  border-width: 2px;
+  border-color: gray;
+}
+.input-icon {
+  position: relative;
+}
+.input-icon i[id="2"] {
+  position: absolute;
+  top: 41px;
+  left: 320px;
+}
+.input-icon i[id="1"] {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  color: white;
+  background-color: gray;
+  padding: 10px 10px 10px 10px;
+}
+.input-icon i[id="3"] {
+  position: absolute;
+  top: 41px;
+  left: 320px;
+  display: none;
+}
+select:hover {
+  color: black;
+  border-color: black;
+}
+.input-icon:hover input,
+.input-icon:hover i[id="2"] {
+  color: black;
+  border-color: black;
+}
+.input-icon:hover i[id="1"] {
+  color: white;
+  background-color: black;
+}
+.input-icon:active input {
+  color: black;
+  border-color: black;
+}
+.input-icon:active i[id="1"] {
+  color: white;
+  background-color: black;
+}
+.input-icon:active i[id="2"] {
+  display: none;
+}
+.input-icon:active i[id="3"] {
+  display: block;
+  color: black;
+  border-color: black;
+}
+input:focus {
+  color: black;
+  border-color: black;
+}
+input:focus ~ p[class="need"] {
+  display: inline-block;
+}
+input:focus ~ i[id="1"] {
+  color: white;
+  background-color: black;
+}
+input:focus ~ i[id="2"] {
+  display: none;
+}
+input:focus ~ i[id="3"] {
+  display: block;
+  color: black;
+  border-color: black;
+}
+textarea:focus ~ .need {
+  display: inline-block;
+}
+textarea:focus ~ i[id="1"] {
+  color: white;
+  background-color: black;
+}
+textarea:focus ~ i[id="2"] {
+  display: none;
+}
+textarea:focus ~ i[id="3"] {
+  display: block;
+  color: black;
+  border-color: black;
+}
+select:focus ~ .need {
+  display: inline-block;
+}
