@@ -2,19 +2,34 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #ebf5fe;
   display: flex;
+  flex-direction: column;
 }
-.subject,
-.unit-header {
-  display: inline;
-}
-
-i {
+div[class^="icon"] {
+  display: inline-block;
   border-radius: 50%;
   font-size: 30px;
-  padding: 15px 20px;
+  position: relative;
+  bottom: 10px;
+  width: 60px;
+  height: 60px;
   color: white;
   background-color: red;
-  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.49));
+}
+.subject {
+  display: inline-block;
+  line-height: 1.5em;
+  position: relative;
+  top: 10px;
+  left: 5px;
+}
+p {
+  line-height: 1.5em;
+  margin-top: -5px;
+}
+i {
+  position: relative;
+  top: 13px;
+  left: 16px;
 }
 a {
   text-decoration: none;
@@ -26,8 +41,8 @@ a {
   flex-direction: column;
   width: 350px;
   height: 200px;
-  margin-top: 100px;
-  padding: 30px 30px;
+  margin-top: 20px;
+  padding: 0 20px 40px 20px;
   background-color: white;
   border-radius: 8px;
 }
@@ -37,4 +52,36 @@ a {
 .unit-header {
   display: inline-block;
   width: 100%;
+}
+div[class^="row"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  padding-left: 150px;
+}
+
+.icon-1 {
+  background-image: linear-gradient(90deg, #e45a7c, #e8917c);
+  filter: drop-shadow(0 0 10px #e8917c);
+}
+.icon-2 {
+  background-image: linear-gradient(90deg, #4da3a4, #7bd9a0);
+  filter: drop-shadow(0 0 10px #7bd9a0);
+}
+.icon-3 {
+  background-image: linear-gradient(90deg, #e28832, #f4c34e);
+  filter: drop-shadow(0 0 10px #f4c34e);
+}
+.icon-4 {
+  background-image: linear-gradient(90deg, #2f69cc, #7797f6);
+  filter: drop-shadow(0 0 10px #7797f6);
+}
+.icon-5 {
+  background-image: linear-gradient(90deg, #7022cb, #bb5feb);
+  filter: drop-shadow(0 0 10px #bb5feb);
+}
+.icon-6 {
+  background-image: linear-gradient(90deg, #69892c, #a0cd6d);
+  filter: drop-shadow(0 0 10px #a0cd6d);
 }

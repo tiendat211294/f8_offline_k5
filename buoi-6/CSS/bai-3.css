@@ -1,0 +1,147 @@
+body {
+  background-color: #ff574d;
+  background-image: url(http://uiwebsoft.com/justlog/login-one/images/login-bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+form {
+  text-align: center;
+}
+input[type="checkbox"],
+i[class="fas fa-check-square"] {
+  display: none;
+}
+input[type="checkbox"]:checked ~ i[class="far fa-square"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ i[class="fas fa-check-square"] {
+  display: inline-block;
+}
+label {
+  display: inline-block;
+  float: left;
+  padding-left: 60px;
+}
+.fgpass {
+  display: inline-block;
+  float: right;
+  padding-right: 60px;
+}
+input {
+  display: inline-block;
+  width: 300px;
+  height: 40px;
+  border: solid 1px gray;
+  border-radius: 5px;
+  padding-left: 20px;
+  margin: 20px 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: #ff574d;
+}
+h2 {
+  text-align: center;
+}
+h2 > span[class="acc"] {
+  color: #ff574d;
+}
+hr {
+  width: 60px;
+  height: 3px;
+  background-color: #ec6355;
+  border: none;
+}
+.login-btn {
+  font-weight: 700;
+  width: 320px;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 20px;
+  margin: 20px 55px;
+  color: white;
+  background-color: #ff574d;
+  border: none;
+  cursor: pointer;
+}
+.right-content {
+  display: inline-block;
+  border: none;
+  width: 450px;
+  height: 480px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: white;
+  margin-top: 100px;
+}
+/* nửa trái */
+.left-content {
+  display: inline-block;
+  border: none;
+  width: 380px;
+  height: 480px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: #ec6355;
+  margin-top: 100px;
+  margin-left: 100px;
+  color: white;
+  text-align: center;
+}
+.read-btn {
+  color: #ec6355;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+}
+
+.logo,
+.icons {
+  display: inline-block;
+}
+.left-heading {
+  margin-top: 50px;
+  text-indent: 10px;
+  margin-bottom: 0;
+}
+.left-heading h3 {
+  display: inline-block;
+  font-size: 3em;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  font-size: 2.5em;
+  color: #ec6355;
+  background-color: white;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 5px;
+}
+p {
+  margin: -20px 10px 10px 10px;
+}
+.icons {
+  display: block;
+  margin: 20px 20px;
+}
+.icons > a {
+  display: inline-block;
+  color: white;
+  background-color: #96130c;
+  border: none;
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+  padding-top: 6px;
+  margin: 5px 5px 5px 5px;
+}
