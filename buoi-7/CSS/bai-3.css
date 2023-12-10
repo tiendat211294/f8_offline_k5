@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Asap", sans-serif;
+}
+body {
+  margin: 10px 100px;
+  color: #4d4436;
+}
+section h3::after {
+  content: "";
+  position: relative;
+  top: -0.25em;
+  margin-left: 10px;
+  display: inline-block;
+  width: 100vh;
+  border: 1px solid #d6d1d1;
+  border-width: 1px;
+}
+button {
+  color: #4d4436;
+  font-weight: 700;
+  border-radius: 50px;
+  border: none;
+  background-color: rgb(198, 196, 196);
+  padding: 8px 20px;
+  margin: 20px 10px 20px 0;
+}
+button span {
+  display: block;
+  padding-top: 5px;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: italic;
+}
+button:hover,
+button:focus {
+  color: white;
+  background-color: #ae7b37;
+}

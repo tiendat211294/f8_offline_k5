@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(https://tuyendung.vingroup.net/static/media/bg_top_homepage.a5385166d5721c50c8a0.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  font-family: "Asap", sans-serif;
+}
+.logo {
+  width: 200px;
+  height: auto;
+  background-color: white;
+  border-radius: 5px;
+  padding: 50px 50px;
+  position: absolute;
+  top: 20em;
+  left: 5em;
+}
+.info {
+  position: relative;
+  top: 22em;
+  left: 18em;
+  color: white;
+}
+.info p {
+  display: inline-block;
+  margin: 20px 20px;
+}
+.info h2 {
+  margin-left: 20px;
+}
+.info span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  letter-spacing: -1px;
+}
+/*thanh menu*/
+.menu {
+  display: inline-block;
+  background-color: white;
+  width: 100%;
+  height: fit-content;
+  padding-right: 50px;
+  position: absolute;
+  top: 470px;
+}
+.menu span {
+  float: right;
+  padding: 20px 20px;
+  font-weight: 700;
+}
+.menu span:hover,
+.menu span:focus {
+  color: orange;
+}
+.menu span:hover::after,
+.menu span:focus::after {
+  display: inline-block;
+  content: "";
+  width: 100%;
+  border: 2px solid orange;
+  color: orange;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+}
