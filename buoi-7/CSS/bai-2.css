@@ -4,10 +4,13 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(https://tuyendung.vingroup.net/static/media/bg_top_homepage.a5385166d5721c50c8a0.png);
+  font-family: "Asap", sans-serif;
+}
+section {
+  background-image: url(https://i1-kinhdoanh.vnecdn.net/2021/12/08/Anh-4619-1638934373.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=Fp8KXgBm4O4-aTAUlSAXzA);
   background-repeat: no-repeat;
   background-size: 100% auto;
-  font-family: "Asap", sans-serif;
+  background-position-y: 55%;
 }
 .logo {
   width: 200px;
@@ -15,13 +18,13 @@ body {
   background-color: white;
   border-radius: 5px;
   padding: 50px 50px;
-  position: absolute;
-  top: 20em;
+  position: relative;
+  top: 8em;
   left: 5em;
 }
 .info {
   position: relative;
-  top: 22em;
+  top: -1em;
   left: 18em;
   color: white;
 }
@@ -40,16 +43,16 @@ body {
 /*thanh menu*/
 .menu {
   display: inline-block;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 100%;
   height: fit-content;
   padding-right: 50px;
-  position: absolute;
-  top: 470px;
+  position: relative;
+  top: 0em;
 }
 .menu span {
   float: right;
-  padding: 20px 20px;
+  padding: 15px 20px;
   font-weight: 700;
 }
 .menu span:hover,

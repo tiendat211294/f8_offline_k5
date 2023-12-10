@@ -18,6 +18,7 @@ section h3::after {
   border: 1px solid #d6d1d1;
   border-width: 1px;
 }
+/*menu bar*/
 button {
   color: #4d4436;
   font-weight: 700;
@@ -38,4 +39,45 @@ button:hover,
 button:focus {
   color: white;
   background-color: #ae7b37;
+}
+/*list hình ảnh*/
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+div[class^="row"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+div[class^="area"] {
+  display: inline-block;
+  width: 30%;
+  height: 200px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  padding: 20px 20px;
+  color: white;
+  background-image: url(https://picsum.photos/400/400);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+div[class^="area"] p {
+  position: relative;
+  top: 7em;
+}
+div[class^="area"] p span {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+div[class^="area"] h4 {
+  font-size: 1.5em;
+}
+div[class^="area"]:hover {
+  border: solid 3px #ae7b37;
+  box-shadow: 5px 5px 5px 5px #ae7b37;
 }
