@@ -5,45 +5,69 @@
   font-family: "Manrope", sans-serif;
   list-style: none;
 }
+body {
+  background-image: url(https://upraise.io/wp-content/uploads/2019/11/How-To-Make-The-Most-Of-Business-Meetings-Banner.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 100%;
+  height: auto;
+}
 a {
   text-decoration: none;
+  color: black;
+}
+li a:hover {
+  text-decoration: underline;
 }
 .menu-bar img {
-  width: 10%;
+  width: 20%;
 }
 .menu-bar {
   display: flex;
   justify-content: space-between;
   margin: 10px 20px;
+  background-color: white;
 }
 .item-list {
+  background-color: white;
   border: none;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px gray;
   position: absolute;
-  top: 2.5em;
-  right: 0;
-  left: 0;
+  top: 4.5em;
+  right: 20px;
   margin: 0 30px;
   display: none;
-  flex-direction: row;
+  width: fit-content;
+  padding: 30px 30px;
+  font-weight: 700;
 }
 div[class^="group"] ul {
   display: inline-block;
-  flex-direction: column;
-  flex-wrap: wrap;
+  width: 200px;
   height: 100px;
+  padding-left: 0;
+  padding-right: 50px;
 }
 div[class^="group"] ul li {
   padding: 5px;
 }
+.left {
+  border-right: 1px solid gray;
+  display: inline-block;
+}
+.right {
+  display: inline-block;
+  margin-left: 20px;
+}
 label {
   font-weight: 700;
-  font-size: 12px;
+  font-size: 20px;
   cursor: pointer;
+  margin: 10px 10px;
 }
-input:hover label,
-input:checked label {
+label:hover,
+input:checked ~ label:last-of-type {
   color: gray;
 }
 
