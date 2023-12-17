@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.input-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding-top: 10px;
+}
+form h2,
+p {
+  text-align: center;
+  padding: 10px 0;
+}
+h2 {
+  font-size: 40px;
+}
+form {
+  margin: 10px 240px;
+}
+textarea {
+  resize: none;
+  border-radius: 5px;
+  border: 2px solid rgba(128, 128, 128, 0.436);
+  width: 77em;
+  padding: 30px 10px 10px 10px;
+}
+input,
+select {
+  border-radius: 5px;
+  border: 2px solid rgba(128, 128, 128, 0.436);
+  height: 50px;
+  width: 500px;
+  padding: 10px;
+}
+select {
+  font-size: 18px;
+  color: gray;
+}
+input {
+  padding: 30px 10px 10px 10px;
+}
+span {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-size: 18px;
+  color: gray;
+  transition: all 0.5s;
+}
+input:focus + span,
+textarea:focus + span {
+  top: 6px;
+  left: 10px;
+  font-size: 12px;
+}
+.item {
+  position: relative;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(86, 87, 85, 0.488);
+}
+button {
+  display: inline-block;
+  background-color: #4d77d8;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  padding: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}

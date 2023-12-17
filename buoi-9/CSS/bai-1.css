@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+}
+.time-line {
+  display: flex;
+  padding-left: 200px;
+  flex-direction: column;
+  justify-content: center;
+}
+.part-1 {
+  text-align: right;
+  display: flex;
+  width: 500px;
+  height: fit-content;
+  flex-direction: column;
+  padding: 0 0 40px 0;
+}
+.part-1:hover .text button {
+  color: white;
+  background-color: #a26f5a;
+}
+.text {
+  position: relative;
+  right: 158px;
+}
+.text p {
+  display: block;
+  width: 300px;
+  padding: 15px 0;
+  margin-left: 200px;
+}
+.part-1 .text::after {
+  content: "";
+  border: 1px solid rgba(162, 162, 162, 0.484);
+  display: inline-block;
+  height: 100px;
+  margin: 0 20px;
+  position: absolute;
+  top: 0.5em;
+  right: -3.2em;
+}
+.time-line .part-1:last-of-type .text::after {
+  display: none;
+}
+.text button {
+  cursor: pointer;
+  width: 100px;
+  border-radius: 50px;
+  border: none;
+  color: gray;
+  padding: 2px;
+  transition: 1s;
+}
+.part-1 span {
+  font-weight: 400;
+  font-size: 16px;
+  display: inline-block;
+  width: 153px;
+}
+.part-1 span::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #448479;
+  background-image: linear-gradient(to bottom, #5cbfaf, #448479);
+  border: none;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+.part-1 span::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #44847935;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+  top: 0.3em;
+  right: 7.33em;
+}
+/*Image*/
+.image {
+  width: 500px;
+  height: 1000px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url(https://career.berkeley.edu/wp-content/uploads/Interviewing-2.5-750px.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.image .background-img {
+  background-image: url(https://www.theforage.com/blog/wp-content/uploads/2023/11/job-interview-questions-and-answers-1-1024x585.jpg);
+  position: relative;
+  top: 4em;
+  left: -3em;
+  width: 200px;
+  height: 300px;
+}
+.image .title {
+  display: inline-block;
+  background-color: #425cb0;
+  text-align: right;
+  position: relative;
+  width: 90%;
+  height: 93.5%;
+  margin: 5%;
+  padding: 80% 10px 10px;
+}
+.image .title span {
+  font-size: 60px;
+  font-weight: 700;
+  background-image: url(https://www.theforage.com/blog/wp-content/uploads/2023/11/job-interview-questions-and-answers-1-1024x585.jpg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.image .title p {
+  background-image: url(https://www.theforage.com/blog/wp-content/uploads/2023/11/job-interview-questions-and-answers-1-1024x585.jpg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
