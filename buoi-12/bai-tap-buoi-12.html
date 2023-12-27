@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập buổi 12</title>
+    <link rel="stylesheet" href="css.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&family=Titillium+Web:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="decor"></div>
+      <input type="radio" id="tab-login" name="btn" checked hidden />
+      <input type="radio" id="tab-register" name="btn" hidden />
+      <div class="page-info">
+        <div class="page-avatar">
+          <img src="images/viking-avatar.jpg" alt="viking-avatar" />
+        </div>
+        <div class="info">
+          <h2>WELLCOME TO</h2>
+          <span>VIKINGER</span>
+          <p>
+            The next generation social network & community! Connect with your
+            friends and play with our quests and badges gamification system!
+          </p>
+        </div>
+        <div class="tab-switch">
+          <label for="tab-login">
+            <div class="tab-btn">Login</div>
+          </label>
+          <label for="tab-register">
+            <div class="tab-btn">Register</div>
+          </label>
+        </div>
+      </div>
+      <div class="account-form">
+        <div class="login-form">
+          <div class="icons"><img src="images/rocket.webp" alt="rocket" /></div>
+          <h3>Account Login</h3>
+          <div class="row">
+            <label><input type="email" /><span>Username or Email</span></label>
+          </div>
+          <div class="row">
+            <label><input type="password" /><span>Password</span></label>
+          </div>
+          <div class="form-item">
+            <div class="item">
+              <input type="checkbox" id="user-remember" checked hidden />
+              <div class="box">
+                <label for="user-remember"
+                  ><i class="fa-solid fa-xmark"></i
+                ></label>
+              </div>
+              <label for="user-remember">Remember Me</label>
+            </div>
+            <div class="item">
+              <a href="#!">Forgot Password?</a>
+            </div>
+          </div>
+          <button class="login-btn">Login to your Account!</button>
+          <span>Login with your Social Account</span>
+          <div class="list">
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-twitch"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
+        <div class="register-form">
+          <div class="icons"><img src="images/rocket.webp" alt="rocket" /></div>
+          <h3>Create your Account!</h3>
+          <div class="row">
+            <label><input type="email" /><span>Your Email</span></label>
+          </div>
+          <div class="row">
+            <label><input type="text" /><span>Username</span></label>
+          </div>
+          <div class="row">
+            <label><input type="password" /><span>Password</span></label>
+          </div>
+          <div class="row">
+            <label><input type="password" /><span>Repeat Password</span></label>
+          </div>
+          <div class="form-item">
+            <div class="item">
+              <input type="checkbox" id="send-email" checked hidden />
+              <div class="box">
+                <label for="send-email"
+                  ><i class="fa-solid fa-xmark"></i
+                ></label>
+              </div>
+              <label for="send-email">Send me news and updates via email</label>
+            </div>
+          </div>
+          <button class="login-btn">Register Now!</button>
+          <div class="message">
+            <p>
+              You'll receive a confirmation email in your inbox with a link to
+              activate your account. If you have any problems,
+              <span><a href="#!">contact us</a></span
+              >!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
