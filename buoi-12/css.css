@@ -110,7 +110,7 @@ section
   padding: 50px;
   width: 500px;
   position: absolute;
-  top: 10px;
+  top: -5rem;
   justify-content: center;
   box-shadow: 5px 0px 8px 0px rgba(128, 128, 128, 0.281);
   opacity: 0;
@@ -118,7 +118,7 @@ section
   z-index: 1;
 }
 .account-form .login-form {
-  top: 70px;
+  top: -1rem;
 }
 section input:first-of-type:checked ~ .account-form .login-form,
 section input:last-of-type:checked ~ .account-form .register-form {
