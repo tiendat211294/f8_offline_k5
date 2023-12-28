@@ -267,6 +267,10 @@ section input:last-of-type:checked ~ .account-form .register-form {
   cursor: pointer;
   width: 40px;
   height: 40px;
+  transition: translate 0.3s;
+}
+.account-form .login-form .list i:hover {
+  translate: 0 -5px;
 }
 .account-form .login-form .list i:nth-of-type(2) {
   background-color: #1cb0f5;
