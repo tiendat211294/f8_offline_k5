@@ -1,0 +1,251 @@
+:root {
+  --container-width: 1200px;
+  --grid-column: 12;
+  --column-space: 20px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(-1 * var(--column-space) / 2);
+}
+[class^="col-"] {
+  flex-basis: calc(100% / (var(--grid-column) / var(--column-size)));
+  max-width: calc(100% / (var(--grid-column) / var(--column-size)));
+  padding: 0 calc(var(--column-space) / 2);
+}
+.row .col-1 {
+  --column-size: 1;
+}
+.row .col-2 {
+  --column-size: 2;
+}
+.row .col-3 {
+  --column-size: 3;
+}
+.row .col-4 {
+  --column-size: 4;
+}
+.row .col-5 {
+  --column-size: 5;
+}
+.row .col-6 {
+  --column-size: 6;
+}
+.row .col-7 {
+  --column-size: 7;
+}
+.row .col-8 {
+  --column-size: 8;
+}
+.row .col-9 {
+  --column-size: 9;
+}
+.row .col-10 {
+  --column-size: 10;
+}
+.row .col-11 {
+  --column-size: 11;
+}
+.row .col-12 {
+  --column-size: 12;
+}
+@media screen and (min-width: 576px) {
+  .row .col-sm-1 {
+    --column-size: 1;
+  }
+  .row .col-sm-2 {
+    --column-size: 2;
+  }
+  .row .col-sm-3 {
+    --column-size: 3;
+  }
+  .row .col-sm-4 {
+    --column-size: 4;
+  }
+  .row .col-sm-5 {
+    --column-size: 5;
+  }
+  .row .col-sm-6 {
+    --column-size: 6;
+  }
+  .row .col-sm-7 {
+    --column-size: 7;
+  }
+  .row .col-sm-8 {
+    --column-size: 8;
+  }
+  .row .col-sm-9 {
+    --column-size: 9;
+  }
+  .row .col-sm-10 {
+    --column-size: 10;
+  }
+  .row .col-sm-11 {
+    --column-size: 11;
+  }
+  .row .col-sm-12 {
+    --column-size: 12;
+  }
+}
+@media screen and (min-width: 768px) {
+  .row .col-md-1 {
+    --column-size: 1;
+  }
+  .row .col-md-2 {
+    --column-size: 2;
+  }
+  .row .col-md-3 {
+    --column-size: 3;
+  }
+  .row .col-md-4 {
+    --column-size: 4;
+  }
+  .row .col-md-5 {
+    --column-size: 5;
+  }
+  .row .col-md-6 {
+    --column-size: 6;
+  }
+  .row .col-md-7 {
+    --column-size: 7;
+  }
+  .row .col-md-8 {
+    --column-size: 8;
+  }
+  .row .col-md-9 {
+    --column-size: 9;
+  }
+  .row .col-md-10 {
+    --column-size: 10;
+  }
+  .row .col-md-11 {
+    --column-size: 11;
+  }
+  .row .col-md-12 {
+    --column-size: 12;
+  }
+}
+@media screen and (min-width: 992px) {
+  .row .col-lg-1 {
+    --column-size: 1;
+  }
+  .row .col-lg-2 {
+    --column-size: 2;
+  }
+  .row .col-lg-3 {
+    --column-size: 3;
+  }
+  .row .col-lg-4 {
+    --column-size: 4;
+  }
+  .row .col-lg-5 {
+    --column-size: 5;
+  }
+  .row .col-lg-6 {
+    --column-size: 6;
+  }
+  .row .col-lg-7 {
+    --column-size: 7;
+  }
+  .row .col-lg-8 {
+    --column-size: 8;
+  }
+  .row .col-lg-9 {
+    --column-size: 9;
+  }
+  .row .col-lg-10 {
+    --column-size: 10;
+  }
+  .row .col-lg-11 {
+    --column-size: 11;
+  }
+  .row .col-lg-12 {
+    --column-size: 12;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .row .col-xl-1 {
+    --column-size: 1;
+  }
+  .row .col-xl-2 {
+    --column-size: 2;
+  }
+  .row .col-xl-3 {
+    --column-size: 3;
+  }
+  .row .col-xl-4 {
+    --column-size: 4;
+  }
+  .row .col-xl-5 {
+    --column-size: 5;
+  }
+  .row .col-xl-6 {
+    --column-size: 6;
+  }
+  .row .col-xl-7 {
+    --column-size: 7;
+  }
+  .row .col-xl-8 {
+    --column-size: 8;
+  }
+  .row .col-xl-9 {
+    --column-size: 9;
+  }
+  .row .col-xl-10 {
+    --column-size: 10;
+  }
+  .row .col-xl-11 {
+    --column-size: 11;
+  }
+  .row .col-xl-12 {
+    --column-size: 12;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .row .col-xxl-1 {
+    --column-size: 1;
+  }
+  .row .col-xxl-2 {
+    --column-size: 2;
+  }
+  .row .col-xxl-3 {
+    --column-size: 3;
+  }
+  .row .col-xxl-4 {
+    --column-size: 4;
+  }
+  .row .col-xxl-5 {
+    --column-size: 5;
+  }
+  .row .col-xxl-6 {
+    --column-size: 6;
+  }
+  .row .col-xxl-7 {
+    --column-size: 7;
+  }
+  .row .col-xxl-8 {
+    --column-size: 8;
+  }
+  .row .col-xxl-9 {
+    --column-size: 9;
+  }
+  .row .col-xxl-10 {
+    --column-size: 10;
+  }
+  .row .col-xxl-11 {
+    --column-size: 11;
+  }
+  .row .col-xxl-12 {
+    --column-size: 12;
+  }
+}
