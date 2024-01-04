@@ -19,7 +19,11 @@ section .decor {
   border-radius: 50%;
   position: absolute;
   top: -20%;
-  right: -30%;
+  right: -40%;
+}
+section > .row {
+  position: absolute;
+  inset: 0;
 }
 
 /*Phần page-info*/
@@ -30,9 +34,10 @@ section .decor {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  position: relative;
-  top: 15%;
-  left: 10%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
 }
 .page-info .info span {
   font-family: "Titillium Web", sans-serif;
@@ -80,13 +85,15 @@ section .decor {
 }
 section
   input:first-of-type:checked
-  ~ .page-info
+  ~ .row
+  .page-info
   .tab-switch
   label:first-of-type
   .tab-btn,
 section
   input:last-of-type:checked
-  ~ .page-info
+  ~ .row
+  .page-info
   .tab-switch
   label:last-of-type
   .tab-btn {
@@ -96,8 +103,7 @@ section
 /*Phần form*/
 .account-form {
   position: relative;
-  top: -60%;
-  right: -70%;
+  height: 100%;
 }
 .account-form .login-form,
 .account-form .register-form {
@@ -109,22 +115,21 @@ section
   padding: 50px;
   width: 500px;
   position: absolute;
-  top: -5rem;
-  justify-content: center;
+  top: 50%;
   box-shadow: 5px 0px 8px 0px rgba(128, 128, 128, 0.281);
+  translate: 100px -50%;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, translate 0.5s ease-in-out;
   z-index: 1;
 }
-.account-form .login-form {
-  top: -1rem;
-}
-section input:first-of-type:checked ~ .account-form .login-form,
-section input:last-of-type:checked ~ .account-form .register-form {
+
+section input:first-of-type:checked ~ .row .account-form .login-form,
+section input:last-of-type:checked ~ .row .account-form .register-form {
   opacity: 1;
-  transform: translateX(-200px);
+  translate: 0 -50%;
   z-index: 2;
 }
+
 .account-form .login-form h3,
 .account-form .register-form h3 {
   text-align: center;
@@ -138,12 +143,12 @@ section input:last-of-type:checked ~ .account-form .register-form {
   top: -90px;
   left: -90px;
 }
-.account-form .login-form .row,
-.account-form .register-form .row {
+.account-form .login-form .form-row,
+.account-form .register-form .form-row {
   position: relative;
 }
-.account-form .login-form .row span,
-.account-form .register-form .row span {
+.account-form .login-form .form-row span,
+.account-form .register-form .form-row span {
   position: absolute;
   left: 10px;
   font-weight: 700;
@@ -153,8 +158,8 @@ section input:last-of-type:checked ~ .account-form .register-form {
   transition: top 0.3s, font-size 0.3s;
   user-select: none;
 }
-.account-form .login-form .row input,
-.account-form .register-form .row input {
+.account-form .login-form .form-row input,
+.account-form .register-form .form-row input {
   height: 60px;
   width: 100%;
   outline: none;
@@ -163,12 +168,12 @@ section input:last-of-type:checked ~ .account-form .register-form {
   border-radius: 10px;
   margin: 15px 0;
 }
-.account-form .login-form .row input:focus,
-.account-form .register-form .row input:focus {
+.account-form .login-form .form-row input:focus,
+.account-form .register-form .form-row input:focus {
   border-color: #5753e4;
 }
-.account-form .login-form .row input:focus + span,
-.account-form .register-form .row input:focus + span {
+.account-form .login-form .form-row input:focus + span,
+.account-form .register-form .form-row input:focus + span {
   top: 0;
   font-size: 13px;
 }
@@ -206,6 +211,7 @@ section input:last-of-type:checked ~ .account-form .register-form {
   position: absolute;
   left: 4.5px;
   top: 3px;
+  cursor: pointer;
 }
 .account-form .login-form .form-item .item input:checked ~ .box,
 .account-form .register-form .form-item .item input:checked ~ .box {
@@ -284,4 +290,39 @@ section input:last-of-type:checked ~ .account-form .register-form {
   font-weight: 700;
   color: #23d2e2;
   text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+  section {
+    position: relative;
+    padding: 70px 0;
+  }
+  section .decor {
+    display: none;
+  }
+  section .row {
+    position: relative;
+    margin: 30px auto;
+  }
+  .account-form {
+    height: 100%;
+  }
+  .account-form .login-form,
+  .account-form .register-form,
+  .account-form .login-form .icons,
+  .account-form .register-form .icons {
+    display: none;
+  }
+  section input:first-of-type:checked ~ .row .account-form .login-form,
+  section input:last-of-type:checked ~ .row .account-form .register-form {
+    position: relative;
+    top: 0;
+    margin: 100px auto 30px auto;
+    transform: translateY(50%);
+    transition: none;
+    display: flex;
+  }
+  .page-info {
+    position: relative;
+  }
 }
