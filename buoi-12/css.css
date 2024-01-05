@@ -74,6 +74,7 @@ section > .row {
   cursor: pointer;
   display: inline-block;
   transition: color 0.3s, background-color 0.3s;
+  user-select: none;
 }
 .tab-switch label:first-of-type .tab-btn {
   border-top-left-radius: 10px;
@@ -229,6 +230,7 @@ section input:last-of-type:checked ~ .row .account-form .register-form {
   font-weight: 700;
   box-shadow: 5px 5px 5px 0 rgba(160, 160, 160, 0.548);
   cursor: pointer;
+  user-select: none;
 }
 .account-form .register-form .login-btn {
   background-color: #23d2e2;
@@ -290,6 +292,9 @@ section input:last-of-type:checked ~ .row .account-form .register-form {
   font-weight: 700;
   color: #23d2e2;
   text-decoration: none;
+}
+.account-form .form-item label {
+  user-select: none;
 }
 
 @media screen and (max-width: 1200px) {
