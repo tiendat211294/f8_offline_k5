@@ -1,0 +1,353 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Sofia Sans", sans-serif;
+}
+
+input {
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home-page {
+  position: relative;
+  display: grid;
+  width: 1500px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "aside header header header header" "aside main main main main" "aside main main main main" "aside main main main main" "aside main main main main";
+}
+
+.aside {
+  grid-area: aside;
+  padding: 53px 0 0 58px;
+  display: flex;
+  flex-direction: column;
+}
+.aside h2 {
+  font-size: 31px;
+  font-weight: 800;
+  margin: 58px auto 46px 0;
+}
+.aside nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 29px;
+}
+.aside nav a {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+}
+.aside nav a img {
+  width: 18px;
+  height: 18px;
+}
+.aside .help-center {
+  display: flex;
+  align-items: center;
+  column-gap: 17px;
+  position: sticky;
+  bottom: 20px;
+  margin-top: auto;
+  cursor: pointer;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 48px 54px 48px 0;
+  row-gap: 22px;
+}
+.header .header_head {
+  display: none;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header_head i {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.header .search {
+  margin-right: auto;
+}
+.header .search label {
+  display: flex;
+  align-items: center;
+}
+.header .search label input {
+  margin-left: 18px;
+  font-size: 18px;
+}
+.header .search label::placeholder {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(240, 240, 240, 0.5176470588);
+}
+.header nav {
+  display: flex;
+  column-gap: 44px;
+}
+.header nav a {
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+  font-size: 18px;
+  position: relative;
+}
+.header nav a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  margin-top: 6px;
+}
+.header nav a:hover::after, .header nav a.active::after {
+  width: 100%;
+}
+.header .action {
+  display: flex;
+  align-items: center;
+  column-gap: 26px;
+  margin-left: 49px;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+.main [class^=group-] {
+  width: 565px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+.main [class^=group-] .image-tall {
+  height: 100%;
+  width: calc(50% - 11px);
+}
+.main [class^=group-] .image-wide {
+  width: 100%;
+  height: calc(50% - 11px);
+}
+.main [class^=group-] [class^=image-] {
+  border-radius: 10px;
+  cursor: pointer;
+}
+.main [class^=group-] [class^=image-] img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 992px) {
+  .home-page {
+    width: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "header header header header" "main main main main" "main main main main" "main main main main" "main main main main";
+  }
+  .header {
+    margin: 20px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header .search {
+    margin: 0 auto;
+    translate: 10% 0;
+  }
+  .header .header_head {
+    display: flex;
+  }
+  .header nav {
+    flex-direction: column;
+  }
+  .header nav a {
+    display: inline-block;
+    width: fit-content;
+    margin: 10px auto;
+  }
+  .header .action {
+    margin: 0;
+  }
+  #box:checked ~ .aside {
+    display: flex;
+    translate: 0 0;
+  }
+  #box:checked ~ .overlay {
+    position: absolute;
+  }
+  .overlay {
+    z-index: 1;
+    inset: 0;
+    background-color: rgba(128, 128, 128, 0.484);
+  }
+  .aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    translate: -100% 0;
+    display: flex;
+    transition: translate 0.2s;
+    transition-delay: 0.3s;
+    background-color: white;
+    height: 100%;
+    padding-right: 20px;
+  }
+  .main {
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=buoi-15.css.map */
