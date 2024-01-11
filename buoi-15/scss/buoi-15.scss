@@ -43,12 +43,19 @@ a {
   nav {
     display: flex;
     flex-direction: column;
-    row-gap: 29px;
+    row-gap: 20px;
     a {
       display: flex;
       align-items: center;
       column-gap: 10px;
+      width: 70%;
+      border-radius: 10px;
+      padding: 5px;
+      transition: background-color 0.3s linear;
       @include text;
+      &:hover {
+        background: rgba(128, 128, 128, 0.449);
+      }
       img {
         width: 18px;
         height: 18px;
@@ -116,6 +123,7 @@ a {
         height: 2px;
         background-color: black;
         margin-top: 6px;
+        transition: width 0.2s linear;
       }
       &:hover::after,
       &.active::after {
@@ -224,5 +232,13 @@ a {
   }
   .main {
     justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .main {
+    gap: 0;
+    [class^="group-"] {
+      margin: 0 20px;
+    }
   }
 }

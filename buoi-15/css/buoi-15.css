@@ -169,15 +169,22 @@ a {
 .aside nav {
   display: flex;
   flex-direction: column;
-  row-gap: 29px;
+  row-gap: 20px;
 }
 .aside nav a {
   display: flex;
   align-items: center;
   column-gap: 10px;
+  width: 70%;
+  border-radius: 10px;
+  padding: 5px;
+  transition: background-color 0.3s linear;
   font-weight: 600;
   font-size: 16px;
   color: black;
+}
+.aside nav a:hover {
+  background: rgba(128, 128, 128, 0.449);
 }
 .aside nav a img {
   width: 18px;
@@ -248,6 +255,7 @@ a {
   height: 2px;
   background-color: black;
   margin-top: 6px;
+  transition: width 0.2s linear;
 }
 .header nav a:hover::after, .header nav a.active::after {
   width: 100%;
@@ -347,6 +355,14 @@ a {
   }
   .main {
     justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .main {
+    gap: 0;
+  }
+  .main [class^=group-] {
+    margin: 0 20px;
   }
 }
 
