@@ -54,6 +54,8 @@ section > .row {
 .page-info .page-avatar img {
   width: 100px;
   height: auto;
+  position: relative;
+  left: 12px;
 }
 
 /*Phần tab-switch*/
@@ -296,22 +298,27 @@ section input:last-of-type:checked ~ .row .account-form .register-form {
 .account-form .form-item label {
   user-select: none;
 }
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1500px) {
+  .decor {
+    display: none;
+  }
+}
+@media screen and (max-width: 1365px) {
   section {
     position: relative;
     padding: 70px 0;
-  }
-  section .decor {
-    display: none;
   }
   section .row {
     position: relative;
     margin: 30px auto;
   }
+  .page-info .tab-switch {
+    margin: 0;
+  }
   .account-form {
     height: 100%;
   }
+  .page-info .info p,
   .account-form .login-form,
   .account-form .register-form,
   .account-form .login-form .icons,
@@ -329,5 +336,27 @@ section input:last-of-type:checked ~ .row .account-form .register-form {
   }
   .page-info {
     position: relative;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .account-form .login-form,
+  .account-form .register-form {
+    width: 100%;
+    margin: 0 15px;
+  }
+  .page-info {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .page-info .info span {
+    font-size: 50px;
+    top: -10px;
+  }
+  .tab-switch label,
+  .tab-switch label .tab-btn {
+    width: 100%;
   }
 }
