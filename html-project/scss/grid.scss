@@ -1,0 +1,50 @@
+$containerWidth: 1200px;
+$gridColumn: 12;
+$columnSpace: 20px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+.container {
+  max-width: $containerWidth;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1 * $columnSpace / 2;
+}
+[class^="col-"] {
+  padding: 0 $columnSpace / 2;
+}
+
+@mixin column($breakpoint: "") {
+  @for $i from 1 through $gridColumn {
+    $prefix: "";
+    @if ($breakpoint != "") {
+      $prefix: $breakpoint + "-";
+    }
+
+    #{".col-" + $prefix + $i} {
+      flex-basis: 100% / ($gridColumn / $i);
+      max-width: 100% / ($gridColumn / $i);
+    }
+  }
+}
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+@include column();
+@each $breakpoint, $width in $breakpoints {
+  @media screen and (min-width: $width) {
+    @include column($breakpoint);
+  }
+}
