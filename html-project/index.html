@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GreenChop-TienDat-project</title>
+
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/grid.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,15 +36,21 @@
     <div class="home-page">
       <header>
         <nav class="head-bar">
+          <label for="box"><i class="fa-solid fa-bars"></i></label>
           <a href="#"><img src="./images/logo/logo.png" alt="logo" /></a>
-          <ul>
+          <input type="checkbox" id="box" hidden />
+          <ul class="nav-bar">
             <li><a href="#!">Trang chủ</a></li>
             <li><a href="#!">Về Greenchop</a></li>
             <li><a href="#!">Sản phẩm</a></li>
             <li><a href="#!">Tin tức</a></li>
             <li><a href="#!">Liên hệ</a></li>
+          </ul>
+          <label for="box" class="overlay"></label>
+          <ul>
             <li>
               <img src="./images/icons/cart.svg" alt="cart" />
+              <span>3</span>
             </li>
             <li><img src="./images/icons/search.svg" alt="search" /></li>
           </ul>
@@ -61,10 +68,11 @@
               lây lan dịch bệnh và đảm bảo an toàn cho người dùng.
             </p>
           </div>
-
-          <div class="banner">
-            <img src="./images/hero-chop.svg" alt="chop" />
-            <span>GREEN CHOP</span>
+          <div class="box">
+            <div class="banner">
+              <img src="./images/hero-chop.svg" alt="chop" />
+              <span>GREEN<br />CHOP</span>
+            </div>
           </div>
         </section>
         <section class="achieve">
@@ -100,8 +108,8 @@
         </section>
         <section class="products">
           <h2>Sản phẩm</h2>
-          <div class="product-list">
-            <div class="list-item">
+          <div class="product-list row">
+            <div class="list-item col-6 col-lg-4">
               <img src="./images/product-donut.png" alt="product" />
               <h3>Combo<br />Quán ăn</h3>
               <div class="line"></div>
@@ -109,7 +117,7 @@
               <p class="price">Giá: <span>600.000</span> vnd</p>
               <button>Thêm vào giỏ hàng</button>
             </div>
-            <div class="list-item">
+            <div class="list-item col-6 col-lg-4">
               <img src="./images/product-dice.png" alt="product" />
               <h3>Combo<br />Quán ăn - nhà hàng</h3>
               <div class="line"></div>
@@ -117,7 +125,7 @@
               <p class="price">Giá: <span>1.200.000</span> vnd</p>
               <button>Thêm vào giỏ hàng</button>
             </div>
-            <div class="list-item">
+            <div class="list-item col-6 col-lg-4">
               <img src="./images/product-game.png" alt="product" />
               <h3>Combo Quán ăn<br />Nhà hàng - Khách sạn</h3>
               <div class="line"></div>
@@ -125,7 +133,7 @@
               <p class="price">Giá: <span>1.800.000</span> vnd</p>
               <button>Thêm vào giỏ hàng</button>
             </div>
-            <div class="list-item">
+            <div class="list-item col-6 col-lg-4">
               <img src="./images/product-donut.png" alt="product" />
               <h3>Combo<br />Gia đình bé xinh</h3>
               <div class="line"></div>
@@ -133,7 +141,7 @@
               <p class="price">Giá: <span>60.000</span> vnd</p>
               <button>Thêm vào giỏ hàng</button>
             </div>
-            <div class="list-item">
+            <div class="list-item col-6 col-lg-4">
               <img src="./images/product-dice.png" alt="product" />
               <h3>Combo<br />Gia đình</h3>
               <div class="line"></div>
@@ -141,7 +149,7 @@
               <p class="price">Giá: <span>120.000</span> vnd</p>
               <button>Thêm vào giỏ hàng</button>
             </div>
-            <div class="list-item">
+            <div class="list-item col-6 col-lg-4">
               <img src="./images/product-game.png" alt="product" />
               <h3>Combo<br />Đại gia đình</h3>
               <div class="line"></div>
@@ -159,8 +167,8 @@
             feugait nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer
             adipiscing
           </p>
-          <div class="article-list">
-            <div class="article">
+          <div class="article-list row">
+            <div class="article col-12 col-sm-6 col-lg-4">
               <img src="./images/news1.jpg" alt="new-image" />
               <div class="info">
                 <span class="name">Lorem ipsum</span>
@@ -178,7 +186,7 @@
                 erat volutpat. Ut wisi enim...
               </p>
             </div>
-            <div class="article">
+            <div class="article col-12 col-sm-6 col-lg-4">
               <img src="./images/news2.jpg" alt="new-image" />
               <div class="info">
                 <span class="name">Lorem ipsum</span>
@@ -196,7 +204,7 @@
                 erat volutpat. Ut wisi enim...
               </p>
             </div>
-            <div class="article">
+            <div class="article col-12 col-sm-6 col-lg-4">
               <img src="./images/news3.jpg" alt="new-image" />
               <div class="info">
                 <span class="name">Lorem ipsum</span>
@@ -330,7 +338,69 @@
           </form>
         </section>
       </main>
-      <footer></footer>
+      <footer>
+        <div class="container">
+          <div class="info-list row">
+            <div class="info col-12 col-md-6 col-xl-3">
+              <img src="./images/logo/logo 1.svg" alt="logo" />
+              <p>
+                <span class="small">GreenChop là bạn đồng hành</span>
+                <br />
+                của người tiêu dùng
+              </p>
+            </div>
+            <div class="info col-12 col-md-6 col-xl-3">
+              <span>Trang chủ</span>
+              <ul>
+                <li><a href="#!">Về greenchop</a></li>
+                <li><a href="#!">Sản phẩm</a></li>
+                <li><a href="#!">Tin tức</a></li>
+              </ul>
+            </div>
+            <div class="info col-12 col-md-6 col-xl-3">
+              <span>Hỗ trợ</span>
+              <ul>
+                <li>Đặt hàng trực tuyến (8h-22h)</li>
+                <li>
+                  <img src="./images/icons/alarm.svg" alt="alarm" />
+                  <b>Thứ 2 - Thứ 6</b>
+                </li>
+                <li>
+                  <img src="./images/icons/phone_outline.svg" alt="phone" />
+                  <b>091 1717 222</b>
+                </li>
+              </ul>
+            </div>
+            <div class="info col-12 col-md-6 col-xl-3">
+              <span>Liên hệ</span>
+              <ul>
+                <li>
+                  <img src="./images/icons/mail.svg" alt="email" />
+                  <p>greenchopvn@gmail.com</p>
+                </li>
+                <li>
+                  <img src="./images/icons/earth.svg" alt="earth" />
+                  <p>Greenchop.vn</p>
+                </li>
+                <li>
+                  <img src="./images/icons/map.svg" alt="location" />
+                  <p>428 Điện Biên Phủ, P11, Quận 10, TPHCM</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="social-list">
+            <img src="./images/verify.png" alt="verify" />
+            <div class="social">
+              <img src="./images/icons/youtube.svg" alt="youtube" />
+              <img src="./images/icons/facebook.svg" alt="facebook" />
+              <img src="./images/icons/instagram.svg" alt="instagram" />
+              <img src="./images/icons/twitter.svg" alt="twitter" />
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

@@ -1,0 +1,214 @@
+@media screen and (max-width: 1400px) {
+  main {
+    .info {
+      .box {
+        .banner {
+          img {
+            width: 70%;
+          }
+          span {
+            font-size: 10rem;
+            left: 20%;
+            translate: 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  footer {
+    .container {
+      width: auto;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  header {
+    position: relative;
+    .head-bar {
+      justify-content: space-between;
+      margin: 0 20px;
+      i {
+        display: inline-block;
+      }
+      .overlay {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100vw;
+        background-color: #333333aa;
+        z-index: 1;
+      }
+      .nav-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        padding: 20px;
+        height: 100vw;
+        transform: translateX(-200%);
+        transition: transform 0.3s linear;
+        background-color: $primaryColor;
+        z-index: 2;
+
+        li {
+          padding: 10px;
+          &:active {
+            background-color: rgba(128, 128, 128, 0.701);
+            border-radius: 8px;
+          }
+          a {
+            color: #fff;
+          }
+        }
+      }
+      input:checked ~ .nav-bar {
+        transform: translateX(0);
+      }
+      input:checked ~ .overlay {
+        display: inline-block;
+      }
+    }
+  }
+  main {
+    .info {
+      .message {
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+        margin-top: 100px;
+        p {
+          max-width: 80%;
+        }
+      }
+      .box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .banner {
+          width: 100vw;
+          border-radius: 0;
+          img {
+            width: 50%;
+            transform: translateX(0);
+          }
+          span {
+            translate: 180px 0;
+          }
+        }
+      }
+    }
+    .achieve {
+      .achieve-list {
+        flex-direction: column;
+        row-gap: 20px;
+        .list-item {
+          width: 90%;
+          text-align: center;
+          &:nth-of-type(2) {
+            width: 90%;
+          }
+          .image,
+          p {
+            margin: 0 auto;
+          }
+        }
+        &::after,
+        &::before {
+          display: none;
+        }
+      }
+    }
+    .products {
+      .product-list {
+        .list-item {
+          max-width: 50%;
+          &::before {
+            display: none;
+          }
+          img {
+            max-width: 50%;
+          }
+        }
+      }
+    }
+    .protection {
+      &::after {
+        height: 100%;
+        transform: translateX(-50%);
+      }
+      .intro-list {
+        flex-wrap: wrap;
+        .list-item {
+        }
+      }
+    }
+    .contact {
+      img {
+        display: none;
+      }
+      form {
+        width: 100%;
+        margin: 100px 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    .info {
+      .message {
+      }
+      .box {
+        .banner {
+          justify-content: center;
+          flex-direction: column;
+          img {
+            margin: 0 auto;
+          }
+          span {
+            rotate: 0deg;
+            position: relative;
+            top: 0;
+            left: 0;
+            translate: 0 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .products {
+      .product-list {
+        .list-item {
+          h3 {
+            font-size: 1.6rem;
+          }
+          span {
+            font-size: 1.6rem;
+          }
+          button {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    .info-list {
+      text-align: center;
+      .info {
+        text-align: center;
+        ul {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+        }
+      }
+    }
+    .social-list {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+}
