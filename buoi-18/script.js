@@ -16,7 +16,7 @@ if (km <= 1 && km > 0) {
 } else {
   price = "Không tồn tại";
 }
-console.log(price);
+console.log(`Số km là: ${km}km; Số tiền phải trả: ${price}đ`);
 document.write(`<p>Số km là: ${km}km</br> Số tiền phải trả: ${price}đ</p>`);
 
 //Bài 2:
@@ -37,7 +37,9 @@ if (consume > 0 && consume <= 50) {
 } else if (consume > 401) {
   price = 2927 * consume;
 } else price = "Không tồn tại";
-console.log(price);
+console.log(
+  `Số điện năng tiêu thụ: ${consume}kWh; Số tiền phải trả: ${price}đ`
+);
 document.write(
   `<p>Số điện năng tiêu thụ: ${consume}kWh</br>Số tiền phải trả: ${price}đ</p>`
 );
@@ -45,17 +47,18 @@ document.write(
 //Bài 3:
 
 document.write(`<h2>Bài 3: Tính giá trị biểu thức</h2>`);
-var n = -10;
+var n = 10.5;
 var s = 0;
 if (n > 0 && n % 1 === 0) {
   for (let i = 0; i <= n; i++) {
     s += i * (i + 1);
   }
-  console.log(s);
+  console.log(`Tổng s = ${s}`);
+  document.write(`<p>Số n = ${n}</br>Tổng s = ${s}</p>`);
 } else {
-  console.log("n không phải số nguyên");
+  console.log(`${n} không phải số nguyên > 1`);
+  document.write(`<p>${n} không phải số nguyên > 1</p>`);
 }
-document.write(`<p>Số n = ${n}</br>Tổng s = ${s}</p>`);
 
 //Bài 4:
 
@@ -82,12 +85,13 @@ function check(n) {
   }
   return answer;
 }
+console.log(`Số ${check(50)}`);
 document.write(`<p>Số ${check(50)}</p>`);
 
 //Bài 5:
 
 document.write(`<h2>Bài 5: Vẽ tam giác số</h2>`);
-var n = 3;
+var n = 5;
 var number = 0;
 for (let row = 1; row <= n; row++) {
   for (let col = 1; col <= row; col++) {
@@ -141,4 +145,5 @@ function sum(n) {
   sum(n - 1);
 }
 sum(3);
+console.log(`S kết quả là: ${s}`);
 document.write(`S kết quả là: ${s}`);
