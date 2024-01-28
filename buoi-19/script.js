@@ -97,9 +97,61 @@ function switchNumber(n) {
           letter = "không ";
           break;
       }
+      if (x.length === 4 && i === 0) {
+        letter = letter + "ngàn ";
+      }
+      if (x.length === 4 && i === 1) {
+        letter = letter + "trăm ";
+      }
+      if (x.length === 4 && i === 2) {
+        letter = letter + "mươi ";
+      }
+      if (x.length === 3 && i === 0) {
+        letter = letter + "trăm ";
+      }
+      if (x.length === 3 && i === 1) {
+        letter = letter + "mươi ";
+      }
+      if (x.length === 2 && i === 0) {
+        letter = letter + "mươi ";
+      }
+      if (x.length >= 2 && x[x.length - 1] === "0" && i === x.length - 1) {
+        letter = "";
+      }
+      if (x.length >= 2 && x[x.length - 2] === "0" && i === x.length - 2) {
+        letter = "";
+      }
+      if (
+        x.length > 2 &&
+        x[x.length - 2] === "0" &&
+        x[x.length - 1] === "0" &&
+        i === x.length - 2
+      ) {
+        letter = "";
+      }
+      if (
+        x.length > 3 &&
+        x[x.length - 3] === "0" &&
+        x[x.length - 2] === "0" &&
+        x[x.length - 1] === "0" &&
+        i === x.length - 3
+      ) {
+        letter = "";
+      }
+      if (x.length >= 2 && x[x.length - 2] === "1" && i === x.length - 2) {
+        letter = "mười ";
+      }
+      if (
+        x.length >= 3 &&
+        x[x.length - 2] === "0" &&
+        x[x.length - 1] !== "0" &&
+        i === x.length - 1
+      ) {
+        letter = "linh " + letter;
+      }
       newString += letter;
     }
   }
   return newString;
 }
-console.log(switchNumber(1234));
+console.log(switchNumber(2101));
