@@ -33,25 +33,26 @@ if (n === 1) {
 console.log(`Đảo số nguyên:`);
 
 function reverseNumber(n) {
+  console.log(`Số ban đầu là: ${n}`);
   if (n >= 0 && n % 1 === 0) {
     var x = String(n);
     var newString = "";
     for (let i = x.length - 1; i >= 0; i--) {
       newString += x[i];
     }
-    return Number(newString);
+    return console.log(`Đảo lại thành: ${Number(newString)}`);
   } else if (n < 0 && n % 1 === 0) {
     var x = String(-n);
     var newString = "";
     for (let i = x.length - 1; i >= 0; i--) {
       newString += x[i];
     }
-    return -Number(newString);
+    return console.log(`Đảo lại thành: ${-Number(newString)}`);
   } else {
     return console.log(`${n} Không phải số nguyên`);
   }
 }
-console.log(reverseNumber(12345));
+console.log(reverseNumber(-12345));
 
 //Bài 3:Đổi số thành chữ:
 
@@ -152,6 +153,7 @@ function switchNumber(n) {
       newString += letter;
     }
   }
-  return newString;
+  console.log(`Số ban đầu là: ${n}`);
+  return console.log(`Đổi thành: ${newString}`);
 }
-console.log(switchNumber(2101));
+console.log(switchNumber(2100));
