@@ -23,7 +23,7 @@ if (n === 1) {
 } else if (n > 2 && n % 1 === 0) {
   console.log(n1);
   console.log(n2);
-  console.log(getFibonacci(n));
+  getFibonacci(n);
 } else {
   console.log(`Số ${n} không hợp lệ`);
 }
@@ -52,7 +52,7 @@ function reverseNumber(n) {
     return console.log(`${n} Không phải số nguyên`);
   }
 }
-console.log(reverseNumber(-12345));
+reverseNumber(1234);
 
 //Bài 3:Đổi số thành chữ:
 
@@ -156,4 +156,4 @@ function switchNumber(n) {
   console.log(`Số ban đầu là: ${n}`);
   return console.log(`Đổi thành: ${newString}`);
 }
-console.log(switchNumber(2100));
+switchNumber(123);
