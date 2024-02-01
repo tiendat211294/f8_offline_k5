@@ -1,24 +1,20 @@
 var mainGraph = document.getElementById("main-paragraph");
-var workGraph = String(mainGraph.innerHTML).replaceAll("  ", " ");
-var start = 3;
-var end = workGraph.indexOf(" ", start + 1);
-
+var workingGraph = mainGraph.innerText;
+var start = 0;
 function changeWords() {
-  if (end < 0) {
-    start = 2;
-    end = workGraph.indexOf(" ", start + 1);
+  var end = workingGraph.indexOf(" ", start);
+  if (end === -1) {
+    end = workingGraph.length;
   }
-  var highlightWords = workGraph.slice(start, end);
-  workGraph = workGraph.replace(
-    highlightWords,
-    `<span>${highlightWords}</span>`
-  );
-  mainGraph.innerHTML = workGraph;
-  workGraph = String(mainGraph.innerHTML).replaceAll("  ", " ");
-  workGraph = workGraph.replaceAll("<span>", "");
-  workGraph = workGraph.replaceAll("</span>", "");
-  start = end;
-  end = workGraph.indexOf(" ", start + 1);
+  var before = workingGraph.slice(0, start);
+  var highlightWords = workingGraph.slice(start, end);
+  var after = workingGraph.slice(end);
+  mainGraph.innerHTML = `${before} <span style="color: red;">${highlightWords}</span> ${after}`;
+  start = end + 1;
+  if (start >= workingGraph.length) {
+    start = 0;
+  }
+  end = workingGraph.indexOf(" ", start);
   return;
 }
 
