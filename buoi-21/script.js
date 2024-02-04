@@ -1,11 +1,11 @@
 //Bài 1:
 console.log(`Bài 1: Tìm số lớn nhất, nhỏ nhất và vị trí`);
-var minMaxNumbers = [-1, 1, 2, 30, -4];
+var minMaxNumbers = [-1, 1, 0, 30, -4];
 var max = 0;
 var min = 0;
 for (number in minMaxNumbers) {
   if (minMaxNumbers[number] % 1 !== 0) {
-    console.log(`Số ${minMaxNumbers[number]} không phải số nguyên`);
+    console.log(`${minMaxNumbers[number]} không phải số nguyên`);
     min = undefined;
     max = undefined;
     break;
@@ -36,6 +36,10 @@ for (number in integerNumbers) {
     console.log(
       `Số ${integerNumbers[number]} không phải số nguyên, mời nhập số hợp lệ`
     );
+    primeNumbers = [];
+    sum = null;
+    count = null;
+    break;
   } else {
     var check = undefined;
     for (let i = 2; i < integerNumbers[number]; i++) {
@@ -74,3 +78,40 @@ console.log(`Mảng ban đầu là: ${randomArray}`);
 console.log(`Mảng sau khi lọc trùng là: ${newArray}`);
 
 //Bài 4:
+console.log(`Bài 4: Sắp xếp rồi chèn`);
+var randomArray = [11, 2, 3, 5, 2, 4, 65, 1, 77];
+console.log(`Mảng ban đầu: ${randomArray}`);
+
+//Sắp xếp:
+for (number of randomArray) {
+  if (number % 1 !== 0) {
+    console.log(`${number} không phải số nguyên, mời nhập số khác`);
+    randomArray = undefined;
+    break;
+  } else {
+    for (let i = 0; i < randomArray.length - 1; i++) {
+      let indexOfMin = i;
+      for (let j = i + 1; j < randomArray.length; j++) {
+        if (randomArray[j] < randomArray[indexOfMin]) indexOfMin = j;
+      }
+      let x = randomArray[i];
+      randomArray[i] = randomArray[indexOfMin];
+      randomArray[indexOfMin] = x;
+    }
+  }
+}
+console.log(`Mảng sau khi sắp xếp: ${randomArray}`);
+
+//Chèn số:
+var newNumber = 9;
+var newArray = [];
+for (index in randomArray) {
+  if (newNumber <= randomArray[index] && newNumber > randomArray[index - 1]) {
+    newArray[newArray.length] = newNumber;
+    newArray[newArray.length] = randomArray[index];
+  } else {
+    newArray[newArray.length] = randomArray[index];
+  }
+}
+console.log(`Số cần chèn: ${newNumber}`);
+console.log(`Mảng sau khi chèn: ${newArray}`);
