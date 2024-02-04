@@ -4,8 +4,11 @@ var minMaxNumbers = [-1, 1, 0, 30, -4];
 var max = 0;
 var min = 0;
 for (number in minMaxNumbers) {
-  if (minMaxNumbers[number] % 1 !== 0) {
-    console.log(`${minMaxNumbers[number]} không phải số nguyên`);
+  if (
+    minMaxNumbers[number] % 1 !== 0 ||
+    typeof minMaxNumbers[number] !== "number"
+  ) {
+    console.log(`${minMaxNumbers[number]} không hợp lệ`);
     min = undefined;
     max = undefined;
     break;
@@ -26,15 +29,19 @@ if (min === undefined) {
 }
 
 //Bài 2:
+console.log(``);
 console.log(`Bài 2: Tính trung bình cộng các số nguyên tố`);
 var integerNumbers = [-1, -3, 5, 10, 11, 20, 3];
 var sum = 0;
 var count = 0;
 var primeNumbers = [];
 for (number in integerNumbers) {
-  if (integerNumbers[number] % 1 !== 0) {
+  if (
+    integerNumbers[number] % 1 !== 0 ||
+    typeof integerNumbers[number] !== "number"
+  ) {
     console.log(
-      `Số ${integerNumbers[number]} không phải số nguyên, mời nhập số hợp lệ`
+      `${integerNumbers[number]} không phải số nguyên hoặc không phải số, mời nhập số hợp lệ`
     );
     primeNumbers = [];
     sum = null;
@@ -64,6 +71,7 @@ for (number of primeNumbers) {
 console.log(`Trung bình cộng các số nguyên tố: ${sum / count}`);
 
 //Bài 3:
+console.log(``);
 console.log(`Bài 3: Lọc trùng`);
 var randomArray = ["a", "b", "v", "a", 1, 2, 3, 1, 4];
 var newArray = [];
@@ -78,15 +86,18 @@ console.log(`Mảng ban đầu là: ${randomArray}`);
 console.log(`Mảng sau khi lọc trùng là: ${newArray}`);
 
 //Bài 4:
+console.log(``);
 console.log(`Bài 4: Sắp xếp rồi chèn`);
 var randomArray = [11, 2, 3, 5, 2, 4, 65, 1, 77];
 console.log(`Mảng ban đầu: ${randomArray}`);
 
 //Sắp xếp:
 for (number of randomArray) {
-  if (number % 1 !== 0) {
-    console.log(`${number} không phải số nguyên, mời nhập số khác`);
-    randomArray = undefined;
+  if (number % 1 !== 0 || typeof number !== "number") {
+    console.log(
+      `${number} không phải số nguyên hoặc không phải số, mời nhập số khác`
+    );
+    randomArray = [];
     break;
   } else {
     for (let i = 0; i < randomArray.length - 1; i++) {
@@ -105,13 +116,17 @@ console.log(`Mảng sau khi sắp xếp: ${randomArray}`);
 //Chèn số:
 var newNumber = 9;
 var newArray = [];
-for (index in randomArray) {
-  if (newNumber <= randomArray[index] && newNumber > randomArray[index - 1]) {
-    newArray[newArray.length] = newNumber;
-    newArray[newArray.length] = randomArray[index];
-  } else {
-    newArray[newArray.length] = randomArray[index];
+if (typeof newNumber !== "number") {
+  console.log(`${newNumber} không hợp lệ`);
+} else {
+  for (index in randomArray) {
+    if (newNumber <= randomArray[index] && newNumber > randomArray[index - 1]) {
+      newArray[newArray.length] = newNumber;
+      newArray[newArray.length] = randomArray[index];
+    } else {
+      newArray[newArray.length] = randomArray[index];
+    }
   }
+  console.log(`Số cần chèn: ${newNumber}`);
+  console.log(`Mảng sau khi chèn: ${newArray}`);
 }
-console.log(`Số cần chèn: ${newNumber}`);
-console.log(`Mảng sau khi chèn: ${newArray}`);
