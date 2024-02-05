@@ -64,11 +64,15 @@ for (number in integerNumbers) {
     }
   }
 }
-console.log(`Các số nguyên tố có trong mảng:`);
-for (number of primeNumbers) {
-  console.log(number);
+if (check === true) {
+  console.log(`Các số nguyên tố có trong mảng:`);
+  for (number of primeNumbers) {
+    console.log(number);
+  }
+  console.log(`Trung bình cộng các số nguyên tố: ${sum / count}`);
+} else {
+  console.log(`Không có số nguyên tố trong mảng`);
 }
-console.log(`Trung bình cộng các số nguyên tố: ${sum / count}`);
 
 //Bài 3:
 console.log(``);
