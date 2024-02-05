@@ -114,10 +114,18 @@ for (number of randomArray) {
 console.log(`Mảng sau khi sắp xếp: ${randomArray}`);
 
 //Chèn số:
-var newNumber = 9;
+var newNumber = 10;
 var newArray = [];
 if (typeof newNumber !== "number") {
   console.log(`${newNumber} không hợp lệ`);
+} else if (newNumber > randomArray[randomArray.length - 1]) {
+  newArray = randomArray;
+  newArray[newArray.length] = newNumber;
+} else if (newNumber <= randomArray[0]) {
+  newArray = [newNumber];
+  for (number of randomArray) {
+    newArray[newArray.length] = number;
+  }
 } else {
   for (index in randomArray) {
     if (newNumber <= randomArray[index] && newNumber > randomArray[index - 1]) {
@@ -127,6 +135,6 @@ if (typeof newNumber !== "number") {
       newArray[newArray.length] = randomArray[index];
     }
   }
-  console.log(`Số cần chèn: ${newNumber}`);
-  console.log(`Mảng sau khi chèn: ${newArray}`);
 }
+console.log(`Số cần chèn: ${newNumber}`);
+console.log(`Mảng sau khi chèn: ${newArray}`);
