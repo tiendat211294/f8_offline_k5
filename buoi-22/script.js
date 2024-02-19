@@ -1,24 +1,33 @@
 //Bài 1:
 console.log(`Bài 1: Lấy kết quả giao giữa 2 mảng`);
-var arrA = [1, 2, "a", 3, 5, 2, 7, 4, 9, 10];
+var arrA = [1, 2, 3, 4, 5];
 var arrB = [2, 4, 6, 4, "a", 8, 10];
 var newArr = [];
-
-arrA.forEach(function (elementA) {
-  arrB.forEach(function (elementB) {
-    if (elementA === elementB) {
-      newArr.push(elementB);
+if (!Array.isArray(arrA)) {
+  console.log(`${arrA} không phải mảng`);
+} else if (!Array.isArray(arrB)) {
+  console.log(`${arrB} không phải mảng`);
+} else {
+  arrA.forEach(function (elementA) {
+    arrB.forEach(function (elementB) {
+      if (elementA === elementB) {
+        newArr.push(elementB);
+      }
+    });
+  });
+  newArr = newArr.filter(function (element, index) {
+    if (index === newArr.indexOf(element)) {
+      return true;
     }
   });
-});
-newArr = newArr.filter(function (element, index) {
-  if (index === newArr.indexOf(element)) {
-    return true;
+  console.log(`Mảng thứ nhất: ${arrA}`);
+  console.log(`Mảng thứ hai: ${arrB}`);
+  if (newArr.length === 0) {
+    console.log(`Hai mảng không có chung phần tử`);
+  } else {
+    console.log(`Giao giữa 2 mảng: ${newArr}`);
   }
-});
-console.log(`Mảng thứ nhất: ${arrA}`);
-console.log(`Mảng thứ hai: ${arrB}`);
-console.log(`Giao giữa 2 mảng: ${newArr}`);
+}
 
 //Bài 2:
 console.log(``);
@@ -35,7 +44,11 @@ function flatten(arr) {
   });
   return result;
 }
-console.log(flatten(arrA));
+if (!Array.isArray(arrA)) {
+  console.log(`${arrA} không phải mảng`);
+} else {
+  console.log(flatten(arrA));
+}
 
 //Bài 3:
 console.log(``);
@@ -46,35 +59,38 @@ var randomArr = [
   [null, undefined],
   [null, undefined],
 ];
-
-//Làm phẳng
-var flatArr = [];
-function flat(arr) {
-  arr.forEach(function (arrElement) {
-    if (Array.isArray(arrElement)) {
-      flat(arrElement);
-    } else {
-      flatArr.push(arrElement);
-    }
-  });
-  return flatArr;
-}
-var newArr = flat(randomArr);
-
-//Chia kiểu dữ liệu
-var result = [];
-newArr.forEach(function check(newArrElement) {
-  var type = typeof newArrElement;
-  if (!result[type]) {
-    result[type] = [];
-    result[result.length] = result[type];
-    check(newArrElement);
-  } else {
-    result[type].push(newArrElement);
+if (!Array.isArray(randomArr)) {
+  console.log(`${randomArr} không phải mảng`);
+} else {
+  //Làm phẳng
+  var flatArr = [];
+  function flat(arr) {
+    arr.forEach(function (arrElement) {
+      if (Array.isArray(arrElement)) {
+        flat(arrElement);
+      } else {
+        flatArr.push(arrElement);
+      }
+    });
+    return flatArr;
   }
-  return result;
-});
-console.log(Array.from(result));
+  var newArr = flat(randomArr);
+
+  //Chia kiểu dữ liệu
+  var result = [];
+  newArr.forEach(function check(newArrElement) {
+    var type = typeof newArrElement;
+    if (!result[type]) {
+      result[type] = [];
+      result[result.length] = result[type];
+      check(newArrElement);
+    } else {
+      result[type].push(newArrElement);
+    }
+    return result;
+  });
+  console.log(Array.from(result));
+}
 
 //Bài 4:
 var arr = [
