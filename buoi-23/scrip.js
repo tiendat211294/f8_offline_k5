@@ -44,11 +44,11 @@ function Customer(name, age, address) {
   user.address = address;
   return user;
 }
-var customerA = new Customer("Nguyễn Văn A", 11, "Hà Nội");
-var customerB = new Customer("Nguyễn Văn B", 2, "Hải Phòng");
-var customerC = new Customer("Nguyễn Văn C", 12, "TP.HCM");
+var customers = [];
+customers.push(new Customer("Nguyễn Văn A", 11, "Hà Nội"));
+customers.push(new Customer("Nguyễn Văn B", 2, "Hải Phòng"));
+customers.push(new Customer("Nguyễn Văn C", 12, "TP.HCM"));
 
-var customers = [customerA, customerB, customerC];
 function createCustomers(customers) {
   const sortCustomers = customers.sort(function (a, b) {
     if (a.age >= b.age) {
