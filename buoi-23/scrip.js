@@ -88,9 +88,9 @@ function handleRegister(name, password, email) {
   usersData.push(user);
   return user;
 }
-handleRegister("Nguyen Van A", "123456", "nguyenvana@email.com");
-handleRegister("Nguyen Van B", "1234567", "nguyenvanb@email.com");
-handleRegister("Nguyen Van C", "12345678", "nguyenvanc@email.com");
+var userA = handleRegister("Nguyen Van A", "123456", "nguyenvana@email.com");
+var userB = handleRegister("Nguyen Van B", "1234567", "nguyenvanb@email.com");
+var userC = handleRegister("Nguyen Van C", "12345678", "nguyenvanc@email.com");
 
 function handleLogin(email, password) {
   for (user of usersData) {
