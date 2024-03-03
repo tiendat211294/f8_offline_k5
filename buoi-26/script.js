@@ -70,6 +70,16 @@ for (let i = 0; i < inputs.length; i++) {
     inputs[i].style = "";
     alerts[i].innerText = "";
   });
-  loginTab.addEventListener("submit", findError);
-  registerTab.addEventListener("submit", findError);
+  loginTab.addEventListener("submit", function (event) {
+    if (!alerts[i].innerText) {
+      event.preventDefault();
+    }
+    findError();
+  });
+  registerTab.addEventListener("submit", function (event) {
+    if (!alerts[i].innerText) {
+      event.preventDefault();
+    }
+    findError();
+  });
 }
