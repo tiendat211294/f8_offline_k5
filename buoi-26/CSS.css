@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+.btn {
+  display: flex;
+  margin: 100px auto;
+  padding: 20px;
+}
+.close {
+  display: none;
+}
+.overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: gray;
+}
+.login,
+.register {
+  position: absolute;
+  width: 500px;
+  top: 0;
+  margin: 100px 50%;
+  translate: -50% 0;
+  z-index: 2;
+  padding: 30px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.register {
+  display: none;
+}
+.login a {
+  text-decoration: none;
+  color: #333;
+}
+.forget-password {
+  font-style: italic;
+  margin-left: auto;
+}
+.register a {
+  text-decoration: none;
+  color: blue;
+}
+.login-btn,
+.register-btn {
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: #1a7900;
+  cursor: pointer;
+}
+.login .change-tab,
+.register .change-tab {
+  display: flex;
+  width: calc(100% + 60px);
+  margin: -30px -30px 0 -30px;
+}
+.change-tab span {
+  cursor: pointer;
+  margin: 0 auto;
+  border: none;
+  width: 50%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: rgb(215, 215, 215);
+}
+.login .change-tab span:first-of-type,
+.register .change-tab span:last-of-type {
+  background-color: white;
+}
+.login p,
+.login .option {
+  text-align: center;
+  position: relative;
+}
+.login .option::after,
+.login .option::before {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  content: "";
+  width: 40%;
+  border: 1px solid rgba(192, 192, 192, 0.389);
+}
+.login span::before {
+  right: 0;
+}
+.alert {
+  font-style: italic;
+  color: red;
+}
+.social-acc {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.social-acc a {
+  background-color: rgb(169, 186, 225);
+  text-align: center;
+  width: 50%;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 10px;
+}
+.login input,
+.register input {
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+.email,
+.password,
+.full-name {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.password {
+  position: relative;
+}
+.password .eye {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  cursor: pointer;
+}
