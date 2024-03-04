@@ -2,12 +2,18 @@
 var btn = document.querySelector(".btn");
 var loginMenu = document.querySelector(".login-menu");
 var overlay = document.querySelector(".overlay");
+var closeKeys = document.querySelectorAll(".close-key");
 overlay.addEventListener("click", function () {
   loginMenu.classList.add("close");
 });
 btn.addEventListener("click", function () {
   loginMenu.classList.remove("close");
 });
+for (let i = 0; i < closeKeys.length; i++) {
+  closeKeys[i].addEventListener("click", function () {
+    loginMenu.classList.add("close");
+  });
+}
 
 //Ẩn-hiện tab
 var loginTab = document.querySelector(".login");

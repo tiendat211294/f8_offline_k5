@@ -25,7 +25,7 @@
   position: absolute;
   width: 500px;
   top: 0;
-  margin: 100px 50%;
+  margin: 30px 50%;
   translate: -50% 0;
   z-index: 2;
   padding: 30px;
@@ -33,6 +33,20 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+}
+.title {
+  margin: 0 auto;
+}
+.title .close-key {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.title img {
+  width: 200px;
+  height: auto;
 }
 .register {
   display: none;
@@ -61,7 +75,7 @@
 .register .change-tab {
   display: flex;
   width: calc(100% + 60px);
-  margin: -30px -30px 0 -30px;
+  margin: 0 -30px;
 }
 .change-tab span {
   cursor: pointer;
@@ -74,7 +88,8 @@
 }
 .login .change-tab span:first-of-type,
 .register .change-tab span:last-of-type {
-  background-color: white;
+  color: white;
+  background-color: #1a7900;
 }
 .login p,
 .login .option {
@@ -109,6 +124,9 @@
   cursor: pointer;
   border-radius: 3px;
   padding: 10px;
+}
+.social-acc a:hover {
+  background-color: rgb(97, 135, 222);
 }
 .login input,
 .register input {
