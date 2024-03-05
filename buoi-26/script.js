@@ -46,7 +46,7 @@ var eyes = document.querySelectorAll(".eye");
 for (let i = 0; i < eyes.length; i++) {
   eyes[i].addEventListener("click", function () {
     var check = eyes[i].innerHTML;
-    if (check === '<i class="fa-regular fa-eye"></i>') {
+    if (check === '<i class="fa-regular fa-eye-slash"></i>') {
       eyes[i].innerHTML = '<i class="fa-regular fa-eye"></i>';
       passes[i].type = "password";
     } else {
