@@ -40,7 +40,7 @@ todoBtn.addEventListener("click", function (e) {
       var todoBtnList = document.querySelectorAll(".todo-btn");
       var todoInputs = document.querySelectorAll(".todo-input");
       var todoForms = document.querySelectorAll(".todo-form");
-      for (let j = 0; j < todoBtnList.length; j++) {
+      for (let j = 1; j < todoBtnList.length; j++) {
         todoBtnList[j].addEventListener("click", function (e) {
           e.preventDefault();
           todoForms[

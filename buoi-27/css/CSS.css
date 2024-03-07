@@ -2,6 +2,11 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #8758ff;
 }
+input,
+button,
+p {
+  font-family: "Poppins", sans-serif;
+}
 .todo-apps {
   display: flex;
   flex-direction: column;
