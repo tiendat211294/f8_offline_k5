@@ -1,0 +1,50 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #8758ff;
+}
+.todo-apps {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: #1a1a40;
+  width: fit-content;
+  margin: 100px auto;
+}
+.title {
+  color: #fff;
+  text-align: center;
+  font-size: 1.75rem;
+}
+.todo-form {
+  padding: 20px 0;
+  display: flex;
+}
+.todo-input {
+  background: none;
+  border: 1px solid #8758ff;
+  color: #fff;
+  outline: none;
+  padding: 0.5rem 1rem;
+  width: 300px;
+}
+.todo-btn {
+  background: #8758ff;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.55rem;
+  border: none;
+}
+.todo {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background: #8758ff;
+  color: #fff;
+}
+.todo i {
+  cursor: pointer;
+}
