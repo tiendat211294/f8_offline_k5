@@ -20,38 +20,46 @@ todoBtn.addEventListener("click", function (e) {
   data = "";
 
   //Xóa todo
-  var todoList = document.querySelectorAll(".todo");
   var trashes = document.querySelectorAll(".fa-trash");
-  for (let i = 0; i < trashes.length; i++) {
-    trashes[i].addEventListener("click", function () {
-      todoList[i].remove();
+  function removeTodo(trashes) {
+    trashes.forEach(function (trash) {
+      trash.addEventListener("click", function () {
+        trash.parentElement.parentElement.remove();
+      });
     });
   }
+  removeTodo(trashes);
 
   //Sửa todo
   var edits = document.querySelectorAll(".fa-pen-to-square");
-  var tasks = document.querySelectorAll(".task");
-  for (let i = 0; i < edits.length; i++) {
-    edits[i].addEventListener("click", function () {
-      var check = tasks[i].innerText;
-      todoList[i].outerHTML = `<form action="" class="todo-form">
+  function editTodo(edits) {
+    edits.forEach(function (edit) {
+      edit.addEventListener("click", function (e) {
+        var check = edit.parentElement.parentElement.innerText;
+        edit.parentElement.parentElement.outerHTML = `<form action="" class="todo-form">
       <input type="text" placeholder="Update Task" class="todo-input" value="${check}"/>
       <button class="todo-btn">Add Task</button></form>`;
-      var todoBtnList = document.querySelectorAll(".todo-btn");
-      var todoInputs = document.querySelectorAll(".todo-input");
-      var todoForms = document.querySelectorAll(".todo-form");
-      for (let j = 1; j < todoBtnList.length; j++) {
-        todoBtnList[j].addEventListener("click", function (e) {
-          e.preventDefault();
-          todoForms[
-            j
-          ].outerHTML = `<div class="todo"><p class="task">${todoInputs[j].value}</p>
+        var todoBtnList = document.querySelectorAll(".todo-btn");
+        var todoInputs = document.querySelectorAll(".todo-input");
+        var todoForms = document.querySelectorAll(".todo-form");
+        for (let j = 1; j < todoBtnList.length; j++) {
+          todoBtnList[j].addEventListener("click", function (e) {
+            e.preventDefault();
+            todoForms[
+              j
+            ].outerHTML = `<div class="todo"><p class="task">${todoInputs[j].value}</p>
           <div>
           <i class="fa-solid fa-pen-to-square"></i><i style="margin-left: 10px" class="fa-solid fa-trash"></i>
           </div>
           </div>`;
-        });
-      }
+            trashes = document.querySelectorAll(".fa-trash");
+            removeTodo(trashes);
+            edits = document.querySelectorAll(".fa-pen-to-square");
+            editTodo(edits);
+          });
+        }
+      });
     });
   }
+  editTodo(edits);
 });
