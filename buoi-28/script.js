@@ -83,6 +83,6 @@ carouselImages.addEventListener("mouseup", function () {
 });
 
 var handleDrag = function (e) {
-  x = e.clientX - dragPosition;
+  x = e.clientX - dragPosition - index * itemWidth;
   carouselImages.style.translate = `${x}px`;
 };
