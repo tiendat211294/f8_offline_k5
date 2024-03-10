@@ -66,6 +66,7 @@ for (let i = 0; i < carouselDotsElement.length; i++) {
 //Kéo thả image
 var dragPosition = 0;
 var x = 0;
+var checkDrag = 0;
 var carouselImagesElement = document.querySelectorAll(".item");
 
 carouselImages.addEventListener("contextmenu", function (e) {
@@ -73,16 +74,46 @@ carouselImages.addEventListener("contextmenu", function (e) {
 });
 carouselImages.addEventListener("mousedown", function (e) {
   e.preventDefault();
-  document.addEventListener("mousemove", handleDrag);
   dragPosition = e.clientX;
+  document.addEventListener("mousemove", handleDrag);
+
   carouselImages.style.cursor = "move";
 });
 carouselImages.addEventListener("mouseup", function () {
   document.removeEventListener("mousemove", handleDrag);
+  carouselImages.style.transition = "0.3s translate linear";
   carouselImages.style.cursor = "";
+  carouselImages.style.translate = `${translateX}px`;
 });
 
 var handleDrag = function (e) {
   x = e.clientX - dragPosition - index * itemWidth;
+  if (
+    (index === 0 && x > 0) ||
+    (index === carouselItems.length - 1 && x + index * itemWidth < 0)
+  ) {
+    return;
+  }
+  carouselImages.style.transition = "none";
   carouselImages.style.translate = `${x}px`;
+  if (Math.abs(x + index * itemWidth) >= itemWidth / 4) {
+    carouselImages.style.transition = "0.3s translate linear";
+    if (x + index * itemWidth > 0) {
+      //Kéo sang trái
+      translateX += itemWidth;
+      index--;
+      carouselImages.style.translate = `${translateX}px`;
+      activeDot();
+      document.removeEventListener("mousemove", handleDrag);
+      carouselImages.style.cursor = "";
+    } else if (x + index * itemWidth < 0) {
+      //Kéo sang phải
+      translateX -= itemWidth;
+      index++;
+      carouselImages.style.translate = `${translateX}px`;
+      activeDot();
+      document.removeEventListener("mousemove", handleDrag);
+      carouselImages.style.cursor = "";
+    }
+  }
 };
