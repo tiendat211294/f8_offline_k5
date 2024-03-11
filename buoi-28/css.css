@@ -52,6 +52,7 @@ img {
   cursor: pointer;
   margin: 0 2px;
 }
-.carousel-dots .dot.active {
+.carousel-dots .dot.active,
+.carousel-dots .dot:hover {
   background-color: orange;
 }
