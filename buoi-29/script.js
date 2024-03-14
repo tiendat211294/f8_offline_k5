@@ -12,17 +12,21 @@ progressBar.addEventListener("mousedown", function (e) {
     offsetWidth = offsetX;
     initialClientX = e.clientX;
     document.addEventListener("mousemove", handleDrag);
+    audio.removeEventListener("timeupdate", updateTime);
   }
 });
 progressSpan.addEventListener("mousedown", function (e) {
   e.stopPropagation();
   document.addEventListener("mousemove", handleDrag);
   initialClientX = e.clientX;
+  audio.removeEventListener("timeupdate", updateTime);
 });
 
 document.addEventListener("mouseup", function () {
   document.removeEventListener("mousemove", handleDrag);
   offsetWidth = positionSpace;
+  setProgress();
+  audio.addEventListener("timeupdate", updateTime);
 });
 var initialClientX = 0;
 var positionSpace = 0; //Khoảng cách kéo thêm tại vị trí ban đầu tới vị trí mới
@@ -68,20 +72,24 @@ playBtn.addEventListener("click", function () {
     audio.play();
     this.classList.remove("fa-play");
     this.classList.add("fa-pause");
+    console.log(audio.currentTime);
   } else {
     audio.pause();
     this.classList.remove("fa-pause");
     this.classList.add("fa-play");
+    console.log(audio.currentTime);
   }
 });
 
 //Khi nhạc đang phát
-audio.addEventListener("timeupdate", function () {
+var updateTime = function () {
   currentTimeElement.innerText = getTime(audio.currentTime);
   //Tính tỷ lệ %
   var rate = (audio.currentTime / audio.duration) * 100;
   progress.style.width = `${rate}%`;
-});
+  console.log(audio.currentTime);
+};
+audio.addEventListener("timeupdate", updateTime);
 
 //reset khi hết nhạc
 audio.addEventListener("ended", function () {
@@ -91,7 +99,7 @@ audio.addEventListener("ended", function () {
   currentTimeElement.innerText = `00:00`;
 });
 
-var setProgress = function (positionSpace) {
+var setProgress = function () {
   var rate = (positionSpace * 100) / progressBar.clientWidth;
-  audio.currentTime = audio.duration * rate;
+  audio.currentTime = (audio.duration * rate) / 100;
 };
