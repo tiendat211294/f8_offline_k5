@@ -17,8 +17,8 @@ progressBar.addEventListener("mousedown", function (e) {
 });
 progressSpan.addEventListener("mousedown", function (e) {
   e.stopPropagation();
-  document.addEventListener("mousemove", handleDrag);
   initialClientX = e.clientX;
+  document.addEventListener("mousemove", handleDrag);
   audio.removeEventListener("timeupdate", updateTime);
 });
 
@@ -32,6 +32,7 @@ var initialClientX = 0;
 var positionSpace = 0; //Khoảng cách kéo thêm tại vị trí ban đầu tới vị trí mới
 var offsetWidth = 0; //Khoảng cách ban đầu span so với progressBar
 var handleDrag = function (e) {
+  e.stopPropagation();
   var clientX = e.clientX;
   positionSpace = offsetWidth + clientX - initialClientX;
   var progressBarWidth = progressBar.clientWidth;
@@ -65,19 +66,20 @@ audio.addEventListener("loadeddata", function () {
 });
 
 //Khi người dùng click vào nút play
+var currentTime = 0;
 playBtn.addEventListener("click", function () {
   //Nếu nhạc đang dừng --> phát nhạc
   //Nếu nhạc đang phát --> dừng nhạc
-  if (audio.paused) {
-    audio.play();
-    this.classList.remove("fa-play");
-    this.classList.add("fa-pause");
-    console.log(audio.currentTime);
-  } else {
+  if (!audio.paused) {
+    audio.currentTime = currentTime;
     audio.pause();
     this.classList.remove("fa-pause");
     this.classList.add("fa-play");
-    console.log(audio.currentTime);
+  } else {
+    audio.currentTime = currentTime;
+    audio.play();
+    this.classList.remove("fa-play");
+    this.classList.add("fa-pause");
   }
 });
 
@@ -87,7 +89,7 @@ var updateTime = function () {
   //Tính tỷ lệ %
   var rate = (audio.currentTime / audio.duration) * 100;
   progress.style.width = `${rate}%`;
-  console.log(audio.currentTime);
+  currentTime = audio.currentTime;
 };
 audio.addEventListener("timeupdate", updateTime);
 
@@ -97,9 +99,27 @@ audio.addEventListener("ended", function () {
   playBtn.classList.add("fa-play");
   progress.style.width = `0%`;
   currentTimeElement.innerText = `00:00`;
+  currentTime = 0;
 });
 
 var setProgress = function () {
   var rate = (positionSpace * 100) / progressBar.clientWidth;
   audio.currentTime = (audio.duration * rate) / 100;
 };
+
+//Hiển thị timer
+var timer = document.querySelector(".timer");
+var setTimer = function (e) {
+  timer.style.display = "block";
+  timer.style.left = `${e.offsetX}px`;
+  var rate = (e.offsetX * 100) / this.clientWidth;
+  var time = (rate * audio.duration) / 100;
+  timer.innerText = getTime(time);
+};
+progressBar.addEventListener("mousemove", setTimer);
+progressBar.addEventListener("mouseout", function () {
+  timer.style.display = "none";
+});
+progressSpan.addEventListener("mousemove", function (e) {
+  e.stopPropagation();
+});

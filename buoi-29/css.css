@@ -42,7 +42,19 @@
   top: 0;
   right: 0;
   translate: 50% -1px;
+  z-index: 1;
 }
 .player-timer span {
   user-select: none;
+}
+.progress-bar .timer {
+  color: #fff;
+  background: #000;
+  font-size: 8px;
+  display: none;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  translate: -50%;
+  z-index: 10;
 }
