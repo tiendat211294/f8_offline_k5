@@ -12,7 +12,7 @@ progressBar.addEventListener("mousedown", function (e) {
     offsetWidth = offsetX;
     initialClientX = e.clientX;
     document.addEventListener("mousemove", handleDrag);
-    audio.removeEventListener("timeupdate", updateTime);
+    // audio.removeEventListener("timeupdate", updateTime);
   }
 });
 progressSpan.addEventListener("mousedown", function (e) {
