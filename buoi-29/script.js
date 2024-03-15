@@ -1,27 +1,25 @@
 var progressBar = document.querySelector(".progress-bar");
 var progress = progressBar.querySelector(".progress");
 var progressSpan = progress.querySelector("span");
-
+var progressBarWidth = progressBar.clientWidth;
 progressBar.addEventListener("mousedown", function (e) {
   if (e.which === 1) {
     var offsetX = e.offsetX;
-    var progressBarWidth = this.clientWidth;
     var rate = (offsetX * 100) / progressBarWidth;
     progress.style.width = `${rate}%`;
     positionSpace = offsetX;
     offsetWidth = offsetX;
     initialClientX = e.clientX;
-    document.addEventListener("mousemove", handleDrag);
     audio.removeEventListener("timeupdate", updateTime);
+    document.addEventListener("mousemove", handleDrag);
   }
 });
 progressSpan.addEventListener("mousedown", function (e) {
+  e.stopPropagation();
   if (e.which === 1) {
-    e.stopPropagation();
-    offsetWidth = e.offsetX;
-    initialClientX = e.clientX;
-    document.addEventListener("mousemove", handleDrag);
     audio.removeEventListener("timeupdate", updateTime);
+    document.addEventListener("mousemove", handleDrag);
+    initialClientX = e.clientX;
   }
 });
 
@@ -38,7 +36,6 @@ var handleDrag = function (e) {
   e.stopPropagation();
   var clientX = e.clientX;
   positionSpace = offsetWidth + clientX - initialClientX;
-  var progressBarWidth = progressBar.clientWidth;
   var rate = (positionSpace * 100) / progressBarWidth;
   if (rate < 0) {
     rate = 0;
@@ -106,7 +103,7 @@ audio.addEventListener("ended", function () {
 });
 
 var setProgress = function () {
-  var rate = (positionSpace * 100) / progressBar.clientWidth;
+  var rate = (positionSpace * 100) / progressBarWidth;
   audio.currentTime = (audio.duration * rate) / 100;
 };
 
@@ -115,7 +112,7 @@ var timer = document.querySelector(".timer");
 var setTimer = function (e) {
   timer.style.display = "block";
   timer.style.left = `${e.offsetX}px`;
-  var rate = (e.offsetX * 100) / this.clientWidth;
+  var rate = (e.offsetX * 100) / progressBarWidth;
   var time = (rate * audio.duration) / 100;
   timer.innerText = getTime(time);
 };
