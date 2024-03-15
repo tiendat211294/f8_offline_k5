@@ -16,10 +16,13 @@ progressBar.addEventListener("mousedown", function (e) {
   }
 });
 progressSpan.addEventListener("mousedown", function (e) {
-  e.stopPropagation();
-  initialClientX = e.clientX;
-  document.addEventListener("mousemove", handleDrag);
-  audio.removeEventListener("timeupdate", updateTime);
+  if (e.which === 1) {
+    e.stopPropagation();
+    offsetWidth = e.offsetX;
+    initialClientX = e.clientX;
+    document.addEventListener("mousemove", handleDrag);
+    audio.removeEventListener("timeupdate", updateTime);
+  }
 });
 
 document.addEventListener("mouseup", function () {
