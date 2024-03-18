@@ -114,15 +114,16 @@ addProductBtn.forEach(function (productBtn) {
     }
     console.log(cart);
     cartData.innerText = "";
-
-    if (cartData.childNodes !== cartTable) {
+    if (checkTable) {
       createCart();
       addCart();
+      checkTable = false;
     } else {
       addCart();
     }
   });
 });
+var checkTable = true;
 
 //Tạo cart_table
 var cartData = document.querySelector("#cart_data");
