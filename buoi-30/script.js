@@ -76,19 +76,56 @@ var cart = [];
 var addProductBtn = document.querySelectorAll("#add_to_cart");
 addProductBtn.forEach(function (productBtn) {
   productBtn.addEventListener("click", function () {
-    cart.push({
-      id: cartCount++,
-      name: productBtn.parentElement.previousElementSibling
-        .previousElementSibling.innerText,
-      quantity: productBtn.previousElementSibling.value,
-      price: productBtn.parentElement.previousElementSibling.innerText,
-    });
-    console.log(cart);
+    if (!cart.length) {
+      cart.push({
+        id: cartCount++,
+        name: productBtn.parentElement.previousElementSibling
+          .previousElementSibling.innerText,
+        quantity: Number(productBtn.previousElementSibling.value),
+        price: productBtn.parentElement.previousElementSibling.innerText,
+      });
+    } else {
+      var check = 0;
+      cart.forEach(function (item) {
+        check++;
+        if (
+          item.name ===
+          productBtn.parentElement.previousElementSibling.previousElementSibling
+            .innerText
+        ) {
+          item.quantity += Number(productBtn.previousElementSibling.value);
+          check--;
+        } else {
+          if (check === cart.length) {
+            cart.push({
+              id: cartCount++,
+              name: productBtn.parentElement.previousElementSibling
+                .previousElementSibling.innerText,
+              quantity: Number(productBtn.previousElementSibling.value),
+              price: productBtn.parentElement.previousElementSibling.innerText,
+            });
+          }
+        }
+      });
+    }
+    cartData.innerText = "";
+    createCart();
   });
 });
+var createCart = function () {
+  cartData.innerHTML =
+    '<table width="100%" border="1" id="cart_table" cellpadding="0" cellspacing="0"></table>';
+  var addCart = newProduct.createElement(
+    "thead",
+    {},
+    newProduct.createElement(
+      "tr",
+      {},
+      newProduct.createElement("th", { width: "5%" }, "STT")
+    )
+  );
+  console.log(cartData.children);
+  //   cartData.children.append(addCart);
+};
 
 var cartData = document.querySelector("#cart_data");
-
-if (!cart.length) {
-  cartData.innerText = "Giỏ hàng không có sản phẩm";
-}
