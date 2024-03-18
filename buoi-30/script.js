@@ -29,7 +29,7 @@ var newProduct = {
     if (Object.keys(attributes).length) {
       Object.keys(attributes).forEach(function (attribute) {
         var value = attributes[attribute];
-        element[attribute] = value;
+        element.setAttribute(attribute, value);
       });
     }
     return element;
@@ -82,7 +82,9 @@ addProductBtn.forEach(function (productBtn) {
         name: productBtn.parentElement.previousElementSibling
           .previousElementSibling.innerText,
         quantity: Number(productBtn.previousElementSibling.value),
-        price: productBtn.parentElement.previousElementSibling.innerText,
+        price: Number(
+          productBtn.parentElement.previousElementSibling.innerText
+        ),
       });
     } else {
       var check = 0;
@@ -102,30 +104,117 @@ addProductBtn.forEach(function (productBtn) {
               name: productBtn.parentElement.previousElementSibling
                 .previousElementSibling.innerText,
               quantity: Number(productBtn.previousElementSibling.value),
-              price: productBtn.parentElement.previousElementSibling.innerText,
+              price: Number(
+                productBtn.parentElement.previousElementSibling.innerText
+              ),
             });
           }
         }
       });
     }
+    console.log(cart);
     cartData.innerText = "";
     createCart();
+    addCart();
   });
 });
+
+//Tạo cart_table
+var cartData = document.querySelector("#cart_data");
+var totalProduct = 0,
+  totalPrice = 0;
+var cartTable = newProduct.createElement("table", {
+  width: "100%",
+  border: "1",
+  id: "cart_table",
+  cellpadding: "0",
+  cellspacing: "0",
+});
+var checkTable = true;
 var createCart = function () {
-  cartData.innerHTML =
-    '<table width="100%" border="1" id="cart_table" cellpadding="0" cellspacing="0"></table>';
+  checkTable = false;
+  cartData.append(cartTable);
   var addCart = newProduct.createElement(
     "thead",
     {},
     newProduct.createElement(
       "tr",
       {},
-      newProduct.createElement("th", { width: "5%" }, "STT")
+      newProduct.createElement("th", { width: "5%" }, "STT"),
+      newProduct.createElement("th", {}, "Tên Sản phẩm"),
+      newProduct.createElement("th", { width: "20%" }, "Giá"),
+      newProduct.createElement("th", { width: "20%" }, "Số lượng"),
+      newProduct.createElement("th", { width: "20%" }, "Thành tiền"),
+      newProduct.createElement("th", { width: "5%" }, "Xóa")
     )
   );
-  console.log(cartData.children);
-  //   cartData.children.append(addCart);
+  cartTable.append(addCart);
+  var sumRow = newProduct.createElement(
+    "tbody",
+    {},
+    newProduct.createElement(
+      "tr",
+      {},
+      newProduct.createElement("td", { colspan: "3" }, "Tổng"),
+      newProduct.createElement("td", {}, totalProduct),
+      newProduct.createElement("td", { colspan: "2" }, totalPrice)
+    )
+  );
+  cartTable.append(sumRow);
+  var hr = document.createElement("hr");
+  cartData.append(hr);
+  var updateBtn = newProduct.createElement(
+    "button",
+    { type: "button", id: "update_cart" },
+    "Cập nhật giỏ hàng"
+  );
+  var deleteBtn = newProduct.createElement(
+    "button",
+    { type: "button", id: "delete_cart" },
+    "Xóa giỏ hàng"
+  );
+  cartData.append(deleteBtn);
+  cartData.append(updateBtn);
 };
 
-var cartData = document.querySelector("#cart_data");
+//Thêm product vào cart_table
+var addCart = function () {
+  cart.forEach(function (item) {
+    var cartProduct = newProduct.createElement(
+      "tbody",
+      {},
+      newProduct.createElement(
+        "tr",
+        {},
+        newProduct.createElement("td", {}, item.id),
+        newProduct.createElement("td", {}, item.name),
+        newProduct.createElement("td", {}, item.price),
+        newProduct.createElement(
+          "td",
+          {},
+          newProduct.createElement("input", {
+            type: "number",
+            class: "quantity",
+            value: item.quantity,
+            id: "data" + item.id,
+          })
+        ),
+        newProduct.createElement(
+          "td",
+          { class: "product-price" },
+          item.quantity * item.price
+        ),
+        newProduct.createElement(
+          "td",
+          {},
+          newProduct.createElement(
+            "button",
+            { type: "button", class: "delete-item" },
+            "Xóa"
+          )
+        )
+      )
+    );
+    cartTable.insertBefore(cartProduct, cartTable.lastChild);
+  });
+};
