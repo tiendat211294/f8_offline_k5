@@ -113,7 +113,7 @@ addProductBtn.forEach(function (productBtn) {
       });
     }
     console.log(cart);
-    cartData.innerText = "";
+
     if (checkTable) {
       createCart();
       addCart();
@@ -130,18 +130,16 @@ var cartData = document.querySelector("#cart_data");
 var cartTable = document.querySelector("#cart_table");
 var totalProduct = 0,
   totalPrice = 0;
-var cartTable = newProduct.createElement("table", {
-  width: "100%",
-  border: "1",
-  id: "cart_table",
-  cellpadding: "0",
-  cellspacing: "0",
-});
-var checkTable = true;
-var createCart = function () {
-  checkTable = false;
-  cartData.append(cartTable);
-  var addCart = newProduct.createElement(
+var cartTable = newProduct.createElement(
+  "table",
+  {
+    width: "100%",
+    border: "1",
+    id: "cart_table",
+    cellpadding: "0",
+    cellspacing: "0",
+  },
+  newProduct.createElement(
     "thead",
     {},
     newProduct.createElement(
@@ -154,9 +152,8 @@ var createCart = function () {
       newProduct.createElement("th", { width: "20%" }, "Thành tiền"),
       newProduct.createElement("th", { width: "5%" }, "Xóa")
     )
-  );
-  cartTable.append(addCart);
-  var sumRow = newProduct.createElement(
+  ),
+  newProduct.createElement(
     "tbody",
     {},
     newProduct.createElement(
@@ -166,8 +163,16 @@ var createCart = function () {
       newProduct.createElement("td", {}, totalProduct),
       newProduct.createElement("td", { colspan: "2" }, totalPrice)
     )
-  );
-  cartTable.append(sumRow);
+  )
+);
+var checkTable = true;
+
+//Tạo cart-table
+var createCart = function () {
+  checkTable = false;
+  cartData.innerText = "";
+  cartData.append(cartTable);
+
   var hr = document.createElement("hr");
   cartData.append(hr);
   var updateBtn = newProduct.createElement(
