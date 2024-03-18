@@ -114,13 +114,19 @@ addProductBtn.forEach(function (productBtn) {
     }
     console.log(cart);
     cartData.innerText = "";
-    createCart();
-    addCart();
+
+    if (cartData.childNodes !== cartTable) {
+      createCart();
+      addCart();
+    } else {
+      addCart();
+    }
   });
 });
 
 //Tạo cart_table
 var cartData = document.querySelector("#cart_data");
+var cartTable = document.querySelector("#cart_table");
 var totalProduct = 0,
   totalPrice = 0;
 var cartTable = newProduct.createElement("table", {
