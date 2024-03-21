@@ -2539,7 +2539,7 @@ var handleLyrics = function () {
       sentenceA = "";
     }
     if (
-      audio.currentTime >= sentences[i].words[0].startTime / 1000 - 0.3 &&
+      audio.currentTime >= sentences[i].words[0].startTime / 1000 - 0.5 &&
       audio.currentTime <=
         sentences[i + 1].words[sentences[i + 1].words.length - 1].endTime / 1000
     ) {
@@ -2550,8 +2550,8 @@ var handleLyrics = function () {
           sentenceB += `${sentences[i].words[j].data} `;
         }
       }
-      firstSentence.innerText = sentenceA;
-      nextSentence.innerText = sentenceB;
+      firstSentence.innerText = sentenceA.trim();
+      nextSentence.innerText = sentenceB.trim();
     }
   }
 };
