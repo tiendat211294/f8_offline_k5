@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.progress-bar {
+  height: 10px;
+  background: gray;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+.player {
+  max-width: 80%;
+  margin: 30px auto;
+}
+.player .player-action {
+  text-align: center;
+}
+.player .player-action i {
+  cursor: pointer;
+}
+.player .player-timer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.progress-bar .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: red;
+}
+.progress span {
+  width: 12px;
+  height: 12px;
+  display: block;
+  background-color: blueviolet;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  translate: 50% -1px;
+}
+.player-timer span {
+  user-select: none;
+}
+.progress-bar .timer {
+  color: #fff;
+  background: #000;
+  font-size: 10px;
+  display: none;
+  position: absolute;
+  top: -150%;
+  left: 0;
+  translate: -50%;
+}
+.open-karaoke button {
+  margin: 0 auto;
+  display: block;
+  background-color: #892be2;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.karaoke {
+  color: #fff;
+  background: #892be2;
+  padding: 15px;
+  transition: translate 0.4s;
+  position: fixed;
+  inset: 0;
+  translate: 0 100vh;
+}
+.karaoke.show {
+  translate: 0;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.container .karaoke-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: 700;
+  align-items: center;
+}
+.karaoke-header span {
+  cursor: pointer;
+}
+.karaoke .karaoke-lyrics {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+}
+.karaoke .karaoke-lyrics p {
+  margin: 30px 0;
+  transition: opacity o.3s;
+  opacity: 1;
+}
+.karaoke .karaoke-lyrics p.blur {
+  opacity: 0;
+}
