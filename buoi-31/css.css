@@ -104,9 +104,4 @@
 }
 .karaoke .karaoke-lyrics p {
   margin: 30px 0;
-  transition: opacity o.3s;
-  opacity: 1;
-}
-.karaoke .karaoke-lyrics p.blur {
-  opacity: 0;
 }
