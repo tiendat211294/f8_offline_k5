@@ -2531,18 +2531,6 @@ var sentenceA = "";
 var sentenceB = "";
 var count = 0;
 var handleLyrics = function () {
-  if (
-    audio.currentTime < sentences[0].words[0].startTime / 1000 - 1 ||
-    audio.currentTime >
-      sentences[sentences.length - 1].words[
-        sentences[sentences.length - 1].words.length - 1
-      ].startTime /
-        1000 +
-        1
-  ) {
-    firstSentence.innerText = `Bài hát: ${lyric.title}`;
-    nextSentence.innerText = `Ca sỹ: ${lyric.singer}`;
-  }
   for (let i = 0; i < sentences.length; i++) {
     count++;
     if (count % 2 === 0) {
