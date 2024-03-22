@@ -2523,9 +2523,6 @@ lyric = JSON.parse(lyric);
 var karaokeLyrics = document.querySelector(".karaoke-lyrics");
 var firstSentence = karaokeLyrics.querySelector(".first-sentence");
 var nextSentence = karaokeLyrics.querySelector(".next-sentence");
-firstSentence.innerText = `Bài hát: ${lyric.title}`;
-nextSentence.innerText = `Ca sỹ: ${lyric.singer}`;
-
 var sentences = lyric.data.sentences;
 var sentenceA = "";
 var sentenceB = "";
@@ -2538,7 +2535,6 @@ var handleLyrics = function () {
     } else {
       sentenceA = "";
     }
-
     if (
       audio.currentTime >= sentences[i].words[0].startTime / 1000 - 0.5 &&
       audio.currentTime <=
