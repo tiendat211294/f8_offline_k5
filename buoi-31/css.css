@@ -107,7 +107,6 @@
   transition: opacity o.3s;
   opacity: 1;
   height: 30px;
-  display: inline-block;
 }
 .karaoke .karaoke-lyrics p.blur {
   opacity: 0;
