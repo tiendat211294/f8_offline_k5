@@ -2518,6 +2518,7 @@ var lyric = `{
   },
   "timestamp": 1711011004211
 }`;
+
 lyric = JSON.parse(lyric);
 
 var karaokeLyrics = document.querySelector(".karaoke-lyrics");
@@ -2558,7 +2559,10 @@ var handleLyrics = function () {
           sentences[sentences.length - 1].words.length - 1
         ].endTime /
           1000 +
-          1
+          1 ||
+      (audio.currentTime >=
+        sentences[i].words[sentences[i].words.length - 1].endTime / 1000 + 2 &&
+        audio.currentTime <= sentences[i + 1].words[0].startTime / 1000 - 2)
     ) {
       firstSentence.innerText = `Bài hát: ${lyric.title}`;
       nextSentence.innerText = `Ca sỹ: ${lyric.singer}`;
