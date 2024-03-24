@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.list {
+  border: solid 15px blue;
+  background-color: blue;
+  max-width: 50%;
+}
+.list-item {
+  padding: 10px;
+  display: flex;
+  margin: 2px;
+  border: 1px solid #fff;
+  background-color: rgb(170, 172, 255);
+}
+.list-item.ghost {
+  opacity: 0.4;
+}
+.list-item.active {
+  background-color: orange;
+}
