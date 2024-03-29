@@ -22,6 +22,8 @@ italicBtn.addEventListener("click", function () {
 colorBtn.addEventListener("input", function () {
   document.execCommand("foreColor", false, colorBtn.value);
 });
+
+//Word, letter count
 document.addEventListener("keyup", function () {
   var wordCounter = content.innerText;
   for (let i = 0; i < wordCounter.length; i++) {

@@ -26,6 +26,9 @@
   gap: 10px;
   height: 100%;
 }
+.save-files {
+  position: relative;
+}
 .controls-btn button {
   cursor: pointer;
   font-size: 1rem;
@@ -54,4 +57,35 @@
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+  display: none;
+}
+.dropdown-menu.show {
+  display: block;
+}
+.dropdown-menu button {
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+}
+.save-files .action-btn {
+  background-color: #0a53be;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.save-files .file-name {
+  padding: 10px;
 }
