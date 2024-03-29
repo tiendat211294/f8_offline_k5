@@ -24,6 +24,8 @@ colorBtn.addEventListener("input", function () {
 });
 
 //Word, letter count
+counter.children[1].children[0].innerText = 0;
+counter.children[0].children[0].innerText = 0;
 document.addEventListener("keyup", function () {
   var wordCounter = content.innerText
     .trim()
@@ -31,7 +33,11 @@ document.addEventListener("keyup", function () {
     .split(" ").length;
   var letterCounter = content.innerText.length;
   counter.children[0].children[0].innerText = letterCounter;
-  counter.children[1].children[0].innerText = wordCounter;
+  if (!content.innerText.trim().replace(/\s+/g, " ")) {
+    counter.children[1].children[0].innerText = 0;
+  } else {
+    counter.children[1].children[0].innerText = wordCounter;
+  }
 });
 
 //Dropdown menu
