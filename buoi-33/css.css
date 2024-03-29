@@ -70,7 +70,7 @@
   display: none;
 }
 .dropdown-menu.show {
-  display: block;
+  display: flex;
 }
 .dropdown-menu button {
   border: none;
@@ -85,6 +85,9 @@
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
+}
+.save-files .action-btn:hover {
+  opacity: 0.8;
 }
 .save-files .file-name {
   padding: 10px;
