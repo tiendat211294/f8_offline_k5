@@ -14,7 +14,7 @@ function step(timeStamp) {
     counter.innerText = 0;
     getLinkBtn.disabled = "";
     getLinkBtn.addEventListener("click", function () {
-      window.window.location.href = "https://fullstack.edu.vn/";
+      window.location.href = "https://fullstack.edu.vn/";
     });
   }
 }
