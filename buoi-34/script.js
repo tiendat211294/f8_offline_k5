@@ -9,7 +9,7 @@ function countDown(timeStamp) {
   let count = Math.floor(elapsed / 1000);
   counter.innerText = 30 - count;
   if (elapsed <= 30000) {
-    window.requestAnimationFrame(step);
+    window.requestAnimationFrame(countDown);
   } else {
     counter.innerText = 0;
     getLinkBtn.disabled = "";
