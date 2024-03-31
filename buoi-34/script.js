@@ -1,7 +1,7 @@
 var counter = document.querySelector(".counter");
 var getLinkBtn = document.querySelector(".get-link-btn");
 let start;
-function step(timeStamp) {
+function countDown(timeStamp) {
   if (start === undefined) {
     start = timeStamp;
   }
@@ -19,4 +19,4 @@ function step(timeStamp) {
   }
 }
 
-window.requestAnimationFrame(step);
+window.requestAnimationFrame(countDown);
