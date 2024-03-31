@@ -6,16 +6,17 @@ function step(timeStamp) {
     start = timeStamp;
   }
   const elapsed = timeStamp - start;
-  const count = Math.floor(elapsed / 1000);
+  let count = Math.floor(elapsed / 1000);
   counter.innerText = 30 - count;
-
   if (elapsed <= 30000) {
     window.requestAnimationFrame(step);
   } else {
+    counter.innerText = 0;
     getLinkBtn.disabled = "";
     getLinkBtn.addEventListener("click", function () {
-      window.location.href = "https://fullstack.edu.vn/";
+      window.window.location.href = "https://fullstack.edu.vn/";
     });
   }
 }
+
 window.requestAnimationFrame(step);
