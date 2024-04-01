@@ -1,6 +1,7 @@
 var counter = document.querySelector(".counter");
 var getLinkBtn = document.querySelector(".get-link-btn");
 let start;
+let requestAnimationID = window.requestAnimationFrame(countDown);
 function countDown(timeStamp) {
   if (start === undefined) {
     start = timeStamp;
@@ -9,7 +10,7 @@ function countDown(timeStamp) {
   let count = Math.floor(elapsed / 1000);
   counter.innerText = 30 - count;
   if (elapsed <= 30000) {
-    window.requestAnimationFrame(countDown);
+    requestAnimationID = window.requestAnimationFrame(countDown);
   } else {
     counter.innerText = 0;
     getLinkBtn.disabled = "";
@@ -19,4 +20,11 @@ function countDown(timeStamp) {
   }
 }
 
-window.requestAnimationFrame(countDown);
+function handleVisibilityChange() {
+  if (document.hidden) {
+    window.cancelAnimationFrame(requestAnimationID);
+  } else {
+    requestAnimationID = window.requestAnimationFrame(countDown);
+  }
+}
+document.addEventListener("visibilitychange", handleVisibilityChange);
