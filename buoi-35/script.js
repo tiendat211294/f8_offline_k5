@@ -8,7 +8,7 @@ class F8 {
         Object.keys(action.data).forEach((key) => {
           window[key] = action.data[key];
           if (variableResult[1].trim() === key) {
-            html = html.replace(result, window[key]);
+            html = html.replace(result, `${window[key]}`);
           }
         });
       }
@@ -22,6 +22,15 @@ class F8 {
         template.innerHTML = html;
         const shadow = this.attachShadow({ mode: "open" });
         const templateNode = template.content.cloneNode(true);
+        for (let i = 0; i < templateNode.children.length; i++) {
+          if (templateNode.children[i].attributes["v-on:click"]) {
+            templateNode.children[i].addEventListener("click", function () {
+              let vOnClickNode = template.content.cloneNode(true);
+              eval(vOnClickNode.children[i].attributes["v-on:click"].nodeValue);
+              console.log(count);
+            });
+          }
+        }
         shadow.append(templateNode);
       }
     }
