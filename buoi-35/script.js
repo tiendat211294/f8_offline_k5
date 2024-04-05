@@ -1,23 +1,23 @@
 class F8 {
   static component(component, action = {}) {
-    let html = action.template;
-    const results = html.match(/{{.+?}}/g);
-    results.forEach((result) => {
-      const variableResult = result.match(/{{(.+?)}}/);
-      if (action.data) {
-        Object.keys(action.data).forEach((key) => {
-          window[key] = action.data[key];
-          if (variableResult[1].trim() === key) {
-            html = html.replace(result, key);
-          }
-        });
-      }
-    });
     class Element extends HTMLElement {
       constructor() {
         super();
       }
       connectedCallback() {
+        let html = action.template;
+        const results = html.match(/{{.+?}}/g);
+        results.forEach((result) => {
+          const variableResult = result.match(/{{(.+?)}}/);
+          if (action.data) {
+            Object.keys(action.data).forEach((key) => {
+              window[key] = action.data[key];
+              if (variableResult[1].trim() === key) {
+                html = html.replace(result, `${window[key]}`);
+              }
+            });
+          }
+        });
         const template = document.createElement("template");
         template.innerHTML = html;
         const shadow = this.attachShadow({ mode: "open" });
@@ -27,6 +27,8 @@ class F8 {
             templateNode.children[i].addEventListener("click", function () {
               templateNode = template.content.cloneNode(true);
               eval(templateNode.children[i].attributes["v-on:click"].nodeValue);
+              shadow.querySelector("h2").innerText = title;
+              shadow.querySelector("h3").innerText = `Đã đếm: ${count} lần`;
             });
           }
         }
