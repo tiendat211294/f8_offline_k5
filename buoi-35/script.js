@@ -8,7 +8,7 @@ class F8 {
         Object.keys(action.data).forEach((key) => {
           window[key] = action.data[key];
           if (variableResult[1].trim() === key) {
-            html = html.replace(result, `${window[key]}`);
+            html = html.replace(result, key);
           }
         });
       }
@@ -21,13 +21,12 @@ class F8 {
         const template = document.createElement("template");
         template.innerHTML = html;
         const shadow = this.attachShadow({ mode: "open" });
-        const templateNode = template.content.cloneNode(true);
+        let templateNode = template.content.cloneNode(true);
         for (let i = 0; i < templateNode.children.length; i++) {
           if (templateNode.children[i].attributes["v-on:click"]) {
             templateNode.children[i].addEventListener("click", function () {
-              let vOnClickNode = template.content.cloneNode(true);
-              eval(vOnClickNode.children[i].attributes["v-on:click"].nodeValue);
-              console.log(count);
+              templateNode = template.content.cloneNode(true);
+              eval(templateNode.children[i].attributes["v-on:click"].nodeValue);
             });
           }
         }
@@ -46,5 +45,6 @@ F8.component("counter-app", {
   template: `<h2>{{ title }}</h2>
         <h3>Đã đếm: {{ count }} lần</h3>
         <button v-on:click="count--">-</button>
-        <button v-on:click="count++">+</button>`,
+        <button v-on:click="count++">+</button>
+        <button v-on:click="title = 'Changed'">Change Title</button>`,
 });
