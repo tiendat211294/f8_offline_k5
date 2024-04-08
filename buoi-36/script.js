@@ -35,11 +35,6 @@ recognition.onresult = (event) => {
     if (confirm(`Có phải bạn muốn: ${text} ?`)) {
       window.open("https://www.google.com", "_blank");
     }
-  } else if (textValue.includes("tìm kiếm")) {
-    if (confirm(`Có phải bạn muốn: ${text} ?`)) {
-      let search = textValue.slice(textValue.indexOf("tìm kiếm") + 9);
-      window.open(`https://www.google.com/search?q=${search}`, "_blank");
-    }
   } else if (textValue.includes("youtube")) {
     if (confirm(`Có phải bạn muốn: ${text} ?`)) {
       window.open("https://www.youtube.com", "_blank");
