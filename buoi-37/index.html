@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title">Todos App</h2>
+      <div class="search">
+        <div class="search-bar">
+          <input type="text" placeholder="Search Todos" />
+          <button class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        <button class="add-todo">Add Todos</button>
+      </div>
+      <div class="todo-list">
+        <div class="todo-item">
+          <span class="task-name">todo</span>
+          <div class="action-btn">
+            <button class="delete">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+            <button class="edit">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="check">
+              <i class="fa-solid fa-check-to-slot"></i>
+            </button>
+          </div>
+        </div>
+        <span class="completed-todos">Completed Todos 1</span>
+        <div class="completed-list"></div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
