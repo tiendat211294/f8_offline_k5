@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post number 1",
+      "text": "asddr  asfgaasrtr weer"
+    },
+    {
+      "id": 2,
+      "title": "Post number 2",
+      "text": "asddr  asfgaasrtr weer"
+    },
+    {
+      "id": 3,
+      "title": "Post number 3",
+      "text": "asddr  asfgaasrtr weer"
+    },
+    {
+      "id": 4,
+      "title": "Post number 4",
+      "text": "asddr  asfgaasrtr weer"
+    },
+    {
+      "id": 5,
+      "title": "Post number 5",
+      "text": "asddr  asfgaasrtr weer"
+    },
+    {
+      "id": 6,
+      "title": "Post number 6",
+      "text": "asddr  asfgaasrtr weer"
+    },
+    {
+      "id": 7,
+      "title": "Post number 7",
+      "text": "asddr  asfgaasrtr weer"
+    },
+    {
+      "id": 8,
+      "title": "Post number 8",
+      "text": "asddr  asfgaasrtr weer"
+    },
+    {
+      "id": 9,
+      "title": "Post number 9",
+      "text": "asddr  asfgaasrtr weer"
+    },
+    {
+      "id": 10,
+      "title": "Post number 10",
+      "text": "asddr  asfgaasrtr weer"
+    }
+  ]
+}
