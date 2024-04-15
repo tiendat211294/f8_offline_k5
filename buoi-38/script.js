@@ -1,4 +1,4 @@
-const postApi = `http://localhost:3000/posts`;
+const postApi = `https://c9mjzh-3000.csb.app/posts`;
 const container = document.querySelector(".container");
 
 const showPost = async () => {
