@@ -39,8 +39,16 @@ ${tasks
       }
     }
     if (e.target.dataset.type === "edit" && e.target.dataset.id) {
-      todoBox.classList.remove("ghost");
       todoBox.dataset.type = "edit";
+      const taskId = e.target.dataset.id;
+      (async (id) => {
+        const response = await fetch(tasksApi + `/${id}`, {
+          method: "GET",
+        });
+        const task = await response.json();
+        todoInput.value = task.name;
+        todoBox.classList.remove("ghost");
+      })(taskId);
     }
   });
 };
@@ -51,6 +59,11 @@ const deleteTask = async (id) => {
   });
   if (response.ok) {
     showTasks();
+  }
+};
+
+const editTask = async (id) => {
+  if (todoBox.dataset.type === "edit") {
   }
 };
 
@@ -104,6 +117,7 @@ const addTodoBtn = document.querySelector(".add-todo");
 const cancelBtn = document.querySelector(".cancel");
 const saveBtn = document.querySelector(".save");
 const todoBox = document.querySelector(".add-todo-box");
+const todoInput = todoBox.querySelector("input");
 addTodoBtn.addEventListener("click", () => {
   todoBox.classList.remove("ghost");
   todoBox.dataset.type = "add";
@@ -114,22 +128,27 @@ cancelBtn.addEventListener("click", () => {
 
 saveBtn.addEventListener("click", () => {
   if (todoBox.dataset.type === "add") {
-    const newTask = todoBox.querySelector("input").value;
+    const newTask = todoInput.value;
     if (newTask) {
-      addTask("newTask");
+      addTask(newTask);
     }
     todoBox.classList.add("ghost");
-    todoBox.querySelector("input").value = "";
+    todoInput.value = "";
+  }
+  if (todoBox.dataset.type === "edit") {
   }
 });
 
 const addTask = async (data) => {
+  let newData = {
+    name: data,
+  };
   const response = await fetch(tasksApi, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(newData),
   });
   if (response.ok) {
     showTasks();
