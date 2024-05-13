@@ -32,14 +32,14 @@ ${tasks
   .join("")}
 `;
   todoList.addEventListener("click", (e) => {
-    if (e.target.dataset.type === "delete" && e.target.dataset.id) {
+    if (e.target.dataset.type === "delete") {
       if (confirm("Bạn có chắc chắn?")) {
         const taskId = e.target.dataset.id;
         deleteTask(taskId);
       }
     }
-    if (e.target.dataset.type === "edit" && e.target.dataset.id) {
-      todoBox.dataset.type = "edit";
+    if (e.target.dataset.type === "edit") {
+      todoBox.dataset.type = "edit-task";
       const taskId = e.target.dataset.id;
       (async (id) => {
         const response = await fetch(tasksApi + `/${id}`, {
@@ -48,7 +48,19 @@ ${tasks
         const task = await response.json();
         todoInput.value = task.name;
         todoBox.classList.remove("ghost");
+        todoBox.dataset.id = e.target.dataset.id;
       })(taskId);
+    }
+    if (e.target.dataset.type === "move") {
+      const taskId = e.target.dataset.id;
+      (async (id) => {
+        const response = await fetch(tasksApi + `/${id}`, {
+          method: "GET",
+        });
+        const task = await response.json();
+        addCompleted(task.name);
+      })(taskId);
+      deleteTask(taskId);
     }
   });
 };
@@ -62,10 +74,7 @@ const deleteTask = async (id) => {
   }
 };
 
-const editTask = async (id) => {
-  if (todoBox.dataset.type === "edit") {
-  }
-};
+const editTask = async (id) => {};
 
 const showCompletedTodo = async () => {
   const response = await fetch(completedApi);
@@ -92,15 +101,35 @@ ${tasks
   .join("")}
 `;
   completedList.addEventListener("click", (e) => {
-    if (e.target.dataset.type === "delete" && e.target.dataset.id) {
+    if (e.target.dataset.type === "delete") {
       if (confirm("Bạn có chắc chắn?")) {
         const todoId = e.target.dataset.id;
         deleteTodo(todoId);
       }
     }
-    if (e.target.dataset.type === "edit" && e.target.dataset.id) {
-      todoBox.classList.remove("ghost");
-      todoBox.dataset.type = "edit";
+    if (e.target.dataset.type === "edit") {
+      todoBox.dataset.type = "edit-todo";
+      const todoId = e.target.dataset.id;
+      (async (id) => {
+        const response = await fetch(completedApi + `/${id}`, {
+          method: "GET",
+        });
+        const task = await response.json();
+        todoInput.value = task.name;
+        todoBox.classList.remove("ghost");
+        todoBox.dataset.id = e.target.dataset.id;
+      })(todoId);
+    }
+    if (e.target.dataset.type === "move") {
+      const taskId = e.target.dataset.id;
+      (async (id) => {
+        const response = await fetch(completedApi + `/${id}`, {
+          method: "GET",
+        });
+        const task = await response.json();
+        addTask(task.name);
+      })(taskId);
+      deleteTodo(taskId);
     }
   });
 };
@@ -121,6 +150,7 @@ const todoInput = todoBox.querySelector("input");
 addTodoBtn.addEventListener("click", () => {
   todoBox.classList.remove("ghost");
   todoBox.dataset.type = "add";
+  todoInput.value = "";
 });
 cancelBtn.addEventListener("click", () => {
   todoBox.classList.add("ghost");
@@ -134,10 +164,43 @@ saveBtn.addEventListener("click", () => {
     }
     todoBox.classList.add("ghost");
     todoInput.value = "";
-  }
-  if (todoBox.dataset.type === "edit") {
+  } else if (todoBox.dataset.type.includes("edit")) {
+    const task = todoInput.value;
+    const id = todoBox.dataset.id;
+    editTaskTodo(task, id);
+    todoBox.classList.add("ghost");
+    todoInput.value = "";
   }
 });
+
+const editTaskTodo = async (data, id) => {
+  let newData = {
+    name: data,
+  };
+  if (todoBox.dataset.type === "edit-task") {
+    const response = await fetch(tasksApi + `/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    });
+    if (response.ok) {
+      showTasks();
+    }
+  } else if (todoBox.dataset.type === "edit-todo") {
+    const response = await fetch(completedApi + `/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    });
+    if (response.ok) {
+      showCompletedTodo();
+    }
+  }
+};
 
 const addTask = async (data) => {
   let newData = {
@@ -152,5 +215,20 @@ const addTask = async (data) => {
   });
   if (response.ok) {
     showTasks();
+  }
+};
+const addCompleted = async (data) => {
+  let newData = {
+    name: data,
+  };
+  const response = await fetch(completedApi, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newData),
+  });
+  if (response.ok) {
+    showCompletedTodo();
   }
 };
